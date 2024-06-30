@@ -1,0 +1,7 @@
+plugin:
+    name: 'murad.factoryabout::lang.plugin.name'
+    description: 'murad.factoryabout::lang.plugin.description'
+    author: murad
+    icon: oc-icon-adjust
+    homepage: ''
+

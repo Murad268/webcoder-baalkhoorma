@@ -1,0 +1,28 @@
+columns:
+    id:
+        label: id
+        type: number
+    email:
+        label: почта
+        type: text
+    nav_logo:
+        label: 'верхняя лого'
+        type: image
+    footer_logo:
+        label: 'нижняя лого'
+        type: image
+    favicon:
+        label: 'фавикон'
+        type: image
+    addres:
+        label: адрес
+        type: text
+    phone1:
+        label: первый телефон
+        type: text
+    phone2:
+        label: второй телефон
+        type: text
+    copywrite_text:
+        label: текст копирайта
+        type: text

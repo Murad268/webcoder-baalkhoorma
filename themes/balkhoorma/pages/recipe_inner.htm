@@ -1,0 +1,50 @@
+url = "/recipes_blog/:slug"
+layout = "default_layout"
+title = "recipe_inner"
+styles = "assets/css/blogInner.css"
+breadcrumb = "blog inner"
+
+[builderDetails]
+modelClass = "Murad\Recipes\Models\RECIPES"
+identifierValue = "{{ :slug }}"
+modelKeyColumn = "slug"
+displayColumn = "name"
+notFoundMessage = "Record not found"
+
+[shares]
+facebook = 1
+twitter = 1
+googleplus = 0
+tumblr = 0
+
+[related]
+==
+
+<section class="detail-container">
+    <div class="container">
+        <div class="left-side">
+            <div class="publish-date">
+                <p>{{'site.published'|_}}:</p>
+                <p>{{builderDetails.record.created_at |date('d.m.y')}}</p>
+            </div>
+            <div class="share">
+                <p>{{'site.share'|_}}:</p>
+                <div class="icons">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ env('APP_URL') }}/recipes/{{builderDetails.record.title}}"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/intent/tweet?url={{ env('APP_URL') }}/recipes/{{builderDetails.record.title}}"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <article>
+            <h3>{{builderDetails.record.title}}</h3>
+            <div class="img-container">
+                <img src="{{builderDetails.record.image.path}}" alt="" />
+            </div>
+            <p class="detail">{{builderDetails.record.desc | raw}}</p>
+        </article>
+        <div class="related">
+            <h4>{{'site.discover'|_}}</h4>
+            {% component 'related' %}
+        </div>
+    </div>
+</section>

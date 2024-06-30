@@ -1,0 +1,24 @@
+plugin:
+    name: 'murad.production::lang.plugin.name'
+    description: 'murad.production::lang.plugin.description'
+    author: murad
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Производство
+        url: /
+        icon: icon-area-chart
+        sideMenu:
+            side-menu-item:
+                label: 'Производственная галерея'
+                url: /murad/productiongallary/productiongallary
+                icon: icon-image
+            side-menu-item2:
+                label: 'Производственный процесс завода'
+                url: /murad/factoryproccess/factoryproccess
+                icon: icon-arrow-circle-o-right
+            side-menu-item3:
+                label: 'О производстве'
+                url: /murad/factoryabout/aboutfactory/update/1
+                icon: icon-edit

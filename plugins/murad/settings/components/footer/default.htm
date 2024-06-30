@@ -1,0 +1,75 @@
+<footer>
+    <div class="container">
+        <div class="logo-container">
+            <a href="{{'home' | page}}">
+                <img src="{{footer_logo.path}}" alt="" />
+            </a>
+        </div>
+        <div class="link-container">
+            <ul>
+                <li>
+                    <a title="{{'menu.about'|_}}" aria-label="{{'menu.about'|_}}" href="{{ 'about_history' | page }}"
+                        >{{'menu.about'|_}}</a
+                    >
+                </li>
+                <li>
+                    <a title="{{'menu.production'|_}}" aria-label="{{'menu.production'|_}}" href="{{ 'productionfactoryprocess' | page }}"
+                        >{{'menu.production'|_}}</a
+                    >
+                </li>
+                <li>
+                    <a title="{{'menu.products'|_}}" aria-label="{{'menu.products'|_}}" href="{{ 'products' | page }}">{{'menu.products'|_}}</a>
+                </li>
+                <li>
+                    <a title="{{'menu.blog'|_}}"  aria-label="{{'menu.blog'|_}}" href="{{ 'blog'|page({ sort: 'a-z'}) }}"
+                        >{{'menu.blog'|_}}</a
+                    >
+                </li>
+                <li>
+                    <a title="{{'menu.contact'|_}}" aria-label="{{'menu.contact'|_}}" href="{{ 'contact'|page }}">{{'menu.contact'|_}}</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="contact-info">
+            <ul>
+                <li>
+                    <img alt="{{settings.email}}" src="{{'assets/icons/Letter-white.svg' | theme}}" />
+                    <a title="{{settings.email}}" aria-label="{{settings.email}}" href="">{{settings.email}}</a>
+                </li>
+                <li>
+                    <img
+                        src="{{'assets/icons/Phone Rounded-white.svg' | theme}}"
+                    />
+                    <a title="{{settings.phone1}}" aria-label="{{settings.phone1}}" href="tel:{{settings.phone1}}">{{settings.phone1}} </a> / <a title="{{settings.phone2}}" aria-label="{{settings.phone2}}" href="tel:{{settings.phone2}}">{{settings.phone2}}</a>
+                </li>
+                <li>
+                    <img src="{{'assets/icons/Map Point-white.svg' | theme}}" alt="{{settings.addres}}" />
+                    {{settings.addres}}
+                </li>
+            </ul>
+        </div>
+        <div class="scroll-to-top">
+            <button><i class="fa-solid fa-arrow-up"></i></button>
+        </div>
+    </div>
+
+    <div class="container">
+        <p class="copyright">&copy; {{copywrite}}.</p>
+
+        <div class="link-container">
+            <ul>
+                <li>
+                    <a title="{{'menu.terms_of_use'|_}}" aria-label="{{'menu.terms_of_use'|_}}" href="{{ 'terms_of_use' | page }}"
+                        >{{'menu.terms_of_use'|_}}</a
+                    >
+                </li>
+                <li>
+                    <a title="{{'menu.privacy_policy'|_}}" aria-label="{{'menu.privacy_policy'|_}}" href="{{ 'privacy-policy' | page }}"
+                        >{{'menu.privacy_policy'|_}}</a
+                    >
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>

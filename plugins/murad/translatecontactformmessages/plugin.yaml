@@ -1,0 +1,11 @@
+plugin:
+    name: 'murad.translatecontactformmessages::lang.plugin.name'
+    description: 'murad.translatecontactformmessages::lang.plugin.description'
+    author: murad
+    icon: oc-icon-medium
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: 'Переводы сообщения контактной формы'
+        url: murad/translatecontactformmessages/translatecontactformmessages
+        icon: icon-user-times

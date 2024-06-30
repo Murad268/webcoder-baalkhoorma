@@ -1,0 +1,48 @@
+<section class="products">
+    <div class="container">
+   <div class="checkbox-container data-links">
+    {% if selectedCategories.count == 1 %}
+        <div class="active" data-filter="{{ selectedCategories.first().id }}">
+            <a title="{{ selectedCategories.first().title }}" aria-label="{{ selectedCategories.first().title }}">{{ selectedCategories.first().title }}</a>
+        </div>
+    {% else %}
+        <div class="active" data-filter="all"><a>All</a></div>
+        {% for cat in selectedCategories %}
+            <div data-filter="{{ cat.id }}">
+                <a title="{{ cat.title }}" aria-label="{{ cat.title }}">{{ cat.title }}</a>
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>
+
+        {% if selectedProducts.count > 0 %}
+        <div class="data-not-found"> data not found</div>
+         <div class="spinner-container first-spinner-container">
+    <div class="spinner"></div>
+  </div>
+        <div class="products-container">
+            
+            {% partial 'categoriespagecategories'%}
+        </div>
+          <div class="spinner-container second-spinner-container">
+    <div class="spinner"></div>
+  </div>
+            <div class="actions">
+            <button
+                data-page="{{ page }}"
+                aria-label="{{'site.load_more'|_}}"
+                class="btn outlined load-more-prod">
+                {{'site.load_more'|_}}
+            </button>
+        </div>
+ 
+
+        {% else %}
+        <div style="color: red; text-align: center">{{'site.data_not_found'|_}}</div>
+
+
+        {% endif %}
+
+
+    </div>
+</section>

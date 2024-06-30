@@ -1,0 +1,18 @@
+columns:
+    id:
+        label: id
+        type: number
+    image:
+        label: изоброжение
+        type: image
+    title:
+        label: загаловок
+        type: text
+        searchable: true
+    created_at:
+        label: дата длбавление
+        type: datetime
+    updated_at:
+        label: дата обновление
+        type: datetime
+

@@ -1,0 +1,68 @@
+<div class="container">
+    <div class="breadcrumb">
+        <ul>
+            <li><a title="{{'site.home'|_}}" aria-label="{{'site.home'|_}}" href="{{'home'|page}}">{{'site.home'|_}}</a></li>
+            <li>
+                <a title="{{'site.about_csr'|_}}" aria-label="{{'site.about_csr'|_}}" href="{{'about_history'|page}}">{{'site.about_csr'|_}}</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<section class="banner">
+    <div class="top" style="--bg-img: url(../imgs/about-bg.jpg)">
+        <div class="container">
+            <h2>{{'site.about_csr_banner'|_}}</h2>
+        </div>
+    </div>
+
+    <div class="link-container">
+        <ul>
+            <li>
+                <a
+                    title="{{'menu.about_history'|_}}"
+                    aria-label="{{'menu.about_history'|_}}"
+                    href="{{ 'about_history'|page }}"
+                    class="subtitle sm {{ this.page.url == '/about-history' ? 'active' : '' }}"
+                    >{{'menu.about_history'|_}}</a
+                >
+            </li>
+            <li>
+                <a
+                    title="{{'menu.about_csr'|_}}"
+                    aria-label="{{'menu.about_csr'|_}}"
+                    href="{{ 'about_csr'|page }}"
+                    class="subtitle sm {{ this.page.url == '/about-csr' ? 'active' : '' }}"
+                    >{{'menu.about_csr'|_}}</a
+                >
+            </li>
+        </ul>
+    </div>
+</section>
+<section class="history">
+    <div class="container">
+        <h3>{{'site.about_csr_subtitle'|_}}</h3>
+        <div class="history-container">
+            <div class="text-container">
+                <p>{{data.text1 | raw}}</p>
+            </div>
+            <div class="media-container">
+                <img
+                    src="{{data.image2 ? data.image2.getPath() : null | theme}}"
+                    alt="{{'site.about_csr'|_}}"
+                />
+            </div>
+        </div>
+        <div class="history-container">
+            <div class="text-container">
+                <p>{{data.text2 | raw}}</p>
+            </div>
+            <div class="media-container">
+                <img
+                    src="{{data.image1 ? data.image1.getPath() : null | theme}}"
+                    alt="{{'site.about_csr'|_}}"
+                />
+            </div>
+        </div>
+    </div>
+</section>

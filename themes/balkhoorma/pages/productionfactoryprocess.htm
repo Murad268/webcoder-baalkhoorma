@@ -1,0 +1,60 @@
+url = "/production-factory-process"
+layout = "default_layout"
+title = "production factory process"
+styles = "assets/css/factoryProcess.css"
+breadcrumb = "production factory process"
+
+[viewBag]
+localeTitle[az] = "istehsal fabrik prosesi"
+localeTitle[ru] = "производственный заводской процесс"
+
+[proccess]
+
+[about_factory]
+==
+<div class="container">
+    <div class="breadcrumb">
+        <ul>
+            <li><a href="{{'home'|page}}">{{'site.home'|_}}</a></li>
+            <li>
+                <a href="{{'about_history'|page}}"
+                    >{{'site.about_factory_proccess'|_}}</a
+                >
+            </li>
+        </ul>
+    </div>
+</div>
+
+<section class="banner">
+    <div class="top" style="--bg-img: url(../imgs/about-bg.jpg)">
+        <div class="container">
+            <h2>{{'site.production_factory_proccess_banner'|_}}</h2>
+        </div>
+    </div>
+
+    <div class="link-container">
+        <ul>
+            <li>
+                <a
+                    href="{{ 'productiongallery'|page }}"
+                    class="subtitle sm {{ this.page.url == '/production-gallery' ? 'active' : '' }}"
+                    >{{'menu.gallary'|_}}</a
+                >
+            </li>
+            <li>
+                <a
+                    href="{{ 'productiongallery'|page }}"
+                    class="subtitle sm {{ this.page.url == '/production-factory-process' ? 'active' : '' }}"
+                    >{{'menu.factory_proccess'|_}}</a
+                >
+            </li>
+        </ul>
+    </div>
+</section>
+<section class="factory-process">
+    <div class="container">
+       
+
+        {% component 'proccess' %} {% component 'about_factory' %}
+    </div>
+</section>

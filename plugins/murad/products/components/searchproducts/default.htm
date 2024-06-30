@@ -1,0 +1,87 @@
+<section style="margin-top: 10px" class="result">
+    <div class="container">
+        <div class="top">
+            <div class="breadcrumb">
+                <ul>
+                    <li>
+                        <a title="{{'site.home'|_}}" aria-label="{{'site.home'|_}}" href="{{'home' | page}}">{{'site.home'|_}}</a>
+                    </li>
+                    <li>
+                        <a>{{'site.search_results'|_}}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="result-categories">
+                <p style="margin-bottom: 30px">
+                    {{'site.search_results_for'|_}}: <span>{{q}}</span>
+                </p>
+                <div style="margin-bottom: 30px" class="checkbox-container">
+                    <div>
+                        <a title="{{'site.all'|_}}" aria-label="{{'site.all'|_}}" href="{{ 'search_results'|page({ q: q }) }}"
+                            >{{'site.all'|_}}</a
+                        >
+                    </div>
+                    <div>
+                        <a title="{{'site.news'|_}}" aria-label="{{'site.news'|_}}" href="{{ 'search_results_for_news'|page({ n: q }) }}"
+                            >{{'site.news'|_}}</a
+                        >
+                    </div>
+                    <div>
+                        <a
+                            title="{{'site.recipes'|_}}"
+                            aria-label="{{'site.recipes'|_}}"
+                            href="{{ 'search_results_for_recipes'|page({ r: q }) }}"
+                            >{{'site.recipes'|_}}</a
+                        >
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        {% if selectedProducts.count > 0 %}
+        <div class="result-container">
+            <section class="products">
+                <div class="container">
+                    <h3>{{'site.products'|_}}</h3>
+                    <div class="products-container products-s">
+                        {% for product in selectedProducts %}
+                        <div class="product-card">
+                            <div class="img-container">
+                                <img
+                                    src="{{product.images.first.path}}"
+                                    alt="{{product.title}}"
+                                />
+                            </div>
+                            <div class="info-container">
+                                <p class="product-name subtitle">
+                                    {{product.title}}
+                                </p>
+                                <p class="product-description">
+                                    {{product.short_desc}}
+                                </p>
+                                <a
+                                    href="{{ 'product_detail'|page({ slug: product.slug}) }}"
+                                    class="redirect"
+                                    >{{'site.read_more'|_}}
+                                    <i aria-hidden="true" class="fa-solid fa-arrow-right"></i
+                                ></a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="actions">
+                        <button
+                            aria-label="{{'site.load_more'|_}}"
+                            data-page="{{page}}"
+                            class="btn outlined load-more-s-prods"
+                        >
+                            {{'site.load_more'|_}}
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        {% else %} data is not found {% endif %}
+    </div>
+</section>

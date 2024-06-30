@@ -1,0 +1,255 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+main img {
+  width: 100%;
+  height: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:root {
+  --clr-black: #170e07;
+  --clr-black-9: rgba(23, 14, 7, 0.9);
+  --clr-black-8: rgba(23, 14, 7, 0.8);
+  --clr-black-7: rgba(23, 14, 7, 0.7);
+  --clr-black-6: rgba(23, 14, 7, 0.6);
+  --clr-black-5: rgba(23, 14, 7, 0.5);
+
+  --clr-white: #fff;
+  --clr-green: #4d893f;
+  --clr-orange: #fa9f42;
+  --bg-color: #fbf8f0;
+  --container-width-lg: 138rem;
+  --container-width-md: 88%;
+  --container-width-sm: 90%;
+
+  font-size: 62.5%;
+}
+
+@font-face {
+  font-family: "Brandon Grotesque";
+
+  src: url("../fonts/Brandon\ Grotesque/BrandonGrotesque-Black.ttf")
+    format("truetype");
+  src: url("../fonts/Brandon\ Grotesque/BrandonGrotesque-Bold.ttf")
+    format("truetype");
+  src: url("../fonts/Brandon\ Grotesque/BrandonGrotesque-Medium.ttf")
+    format("truetype");
+  src: url("../fonts/Brandon\ Grotesque/BrandonGrotesque-Regular.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "Manrope";
+
+  src: url("../fonts/ManRope/static/Manrope-Bold.ttf") format("truetype");
+  src: url("../fonts/ManRope/static/Manrope-ExtraBold.ttf") format("truetype");
+  src: url("../fonts/ManRope/static/Manrope-ExtraBold.ttf") format("truetype");
+  src: url("../fonts/ManRope/static/Manrope-ExtraLight.ttf") format("truetype");
+  src: url("../fonts/ManRope/static/Manrope-Light.ttf") format("truetype");
+  src: url("../fonts/ManRope/static/Manrope-Medium.ttf") format("truetype");
+  src: url("../fonts/ManRope/static/Manrope-Regular.ttf") format("truetype");
+  src: url("../fonts/ManRope/static/Manrope-SemiBold.ttf") format("truetype");
+
+  src: url("../fonts/ManRope/Manrope-VariableFont_wght.ttf") format("truetype");
+}
+
+body {
+  font-family: Brandon Grotesque;
+  font-size: 1.8rem;
+  line-height: 150%;
+
+  color: var(--clr-black-9);
+  background-color: var(--bg-color);
+}
+
+h1 {
+  font-family: Brandon Grotesque;
+  font-size: 8.5rem;
+  font-weight: 700;
+  line-height: 110%;
+  letter-spacing: 0.255rem;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-family: Brandon Grotesque;
+  font-size: 7.2rem;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -0.288rem;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-family: Brandon Grotesque;
+  font-size: 4.8rem;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: -0.192rem;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-family: Brandon Grotesque;
+  font-size: 3rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-family: Brandon Grotesque;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.subtitle.sm {
+  font-size: 1.6rem;
+  line-height: 150%;
+}
+
+.md {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 150%;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-width-lg);
+  margin: 0 auto;
+}
+
+.btn {
+  padding: 0.8em 1.66em;
+  border-radius: 1rem;
+
+  font-family: Manrope;
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: 0.09rem;
+  border: 1.5px solid var(--clr-green);
+
+  cursor: pointer;
+
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.2s;
+}
+
+.btn.outlined:hover,
+.btn {
+  background: var(--clr-green);
+  color: var(--clr-white);
+}
+
+.btn:hover,
+.btn.outlined {
+  color: var(--clr-green);
+  background: var(--clr-white);
+}
+
+.input {
+  border-radius: 0.5rem;
+  border: 1px solid rgba(77, 137, 63, 0.5);
+  outline: transparent;
+
+  background: var(--clr-white);
+  padding: 1rem 2rem;
+
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 150%;
+  color: var(--clr-black-6);
+
+  resize: vertical;
+}
+
+.input:focus-visible {
+  color: var(--clr-black-8);
+}
+
+.input.error {
+  border: 1px solid rgba(237, 19, 58, 0.5);
+  color: #ed133a;
+}
+
+.select {
+  color: var(--clr-green);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(77, 137, 63, 0.5);
+  outline: transparent;
+
+  background: var(--clr-white);
+  padding: 1rem 2rem;
+
+  font-family: Manrope;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 150%;
+
+  text-transform: uppercase;
+}
+
+.select > option {
+  color: var(--clr-black);
+  font-size: 1.6rem;
+}
+
+@media screen and (max-width: 1440px) {
+  .container {
+    width: var(--container-width-md);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .container {
+    width: var(--container-width-sm);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 3.8rem;
+    font-weight: 700;
+    line-height: 110%;
+  }
+
+  h2 {
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+  }
+
+  h3 {
+    font-size: 2.4rem;
+    font-weight: 400;
+    line-height: 110%;
+  }
+
+  h4 {
+    font-size: 2rem;
+    font-weight: 400;
+  }
+}

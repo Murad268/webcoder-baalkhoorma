@@ -1,0 +1,28 @@
+<section class="categories">
+    <div class="container">
+        <div class="top">
+            <h3>{{ 'site.categories'|_ }}</h3>
+            <p>{{ 'site.categories_subtext'|_ }}</p>
+
+           {% if this.page.url == '/' %}
+    <a title="{{ 'site.view_all'|_ }}" class="redirect" href="{{'products'|page}}">{{ 'site.view_all'|_ }} <i class="fa-solid fa-arrow-right"></i></a>
+{% endif %}
+
+
+        </div>
+    <div class="categories-slider-container">
+    {% for data in categories %}
+        {% set categoryClass = loop.index == 1 ? 'main-category' : '' %}
+        <a title="{{ data.title }}" aria-label="{{ data.title }}" href="{{ 'product_category'|page({ slug: data.slug, filter: "all" }) }}">
+            <div class="category-container {{ categoryClass }}">
+                <h4>{{ data.title }}</h4>
+                <div class="img-container">
+                    <img src="{{ data.image.path }}" alt="{{ data.title }}" />
+                </div>
+            </div>
+        </a>
+    {% endfor %}
+</div>
+
+    </div>
+</section>

@@ -1,0 +1,10 @@
+name: PrivacyPolicy
+form: $/murad/privacypolicy/models/privacypolicy/fields.yaml
+modelClass: Murad\Privacypolicy\Models\PrivacyPolicy
+defaultRedirect: murad/privacypolicy/privacypolicy
+create:
+    redirect: 'murad/privacypolicy/privacypolicy/update/:id'
+    redirectClose: murad/privacypolicy/privacypolicy
+update:
+    redirect: murad/privacypolicy/privacypolicy
+    redirectClose: murad/privacypolicy/privacypolicy

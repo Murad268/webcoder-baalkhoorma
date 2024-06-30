@@ -1,0 +1,93 @@
+
+
+<div class="container">
+    <div class="breadcrumb">
+        <ul>
+            <li>
+                <a title="{{'site.blog'|_}}"
+                aria-label="{{'site.blog'|_}}"
+                    >{{'site.blog'|_}}</a
+                >
+            </li>
+             <li>
+                <a>{{'site.news'|_}}</a
+                >
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+<section class="banner">
+    <div class="top" style="--bg-img: url(../imgs/about-bg.jpg)">
+        <div class="container">
+            <h2>{{'site.news_banner'|_}}</h2>
+        </div>
+    </div>
+
+    <div class="link-container">
+    <ul>
+            <li>
+                <a
+                    title="{{'menu.news'|_}}"
+                    aria-label="{{'menu.news'|_}}"
+                    href="{{ 'blog'|page({ sort: 'a-z'}) }}"
+                    class="subtitle sm {{ this.page.link == 'news' ? 'active' : '' }}"
+                    >{{'menu.news'|_}}</a
+                >
+            </li>
+            <li>
+                <a
+                    title="{{'menu.recipes'|_}}"
+                    aria-label="{{'menu.recipes'|_}}"
+                    href="{{ 'recipes'|page({ sort: 'a-z'}) }}"
+                    class="subtitle sm {{ this.page.link == 'recipes' ? 'active' : '' }}"
+                    >{{'menu.recipes'|_}}</a
+                >
+            </li>
+        </ul>
+    </div>
+</section>
+<section class="blog-card-container">
+    <div class="container">
+        <div class="filter-container">
+            <select class="select" name="sorting" id="sorting_recipes">
+                <option {% if sort == 'a-z' %}selected{% endif %} value="az" data-sort="a-z">A-Z</option>
+                <option {% if sort == 'z-a' %}selected{% endif %} value="za" data-sort="z-a">Z-A</option>
+                <option {% if sort == 'newest' %}selected{% endif %} value="newest" data-sort="newest">Newest</option>
+                <option {% if sort == 'oldest' %}selected{% endif %} value="oldest" data-sort="oldest">Oldest</option>
+            </select>
+        </div>
+        <div class="card-grid">
+           {% for news in data %}
+<a href="{{ 'blog_inner'|page({ slug: news.slug}) }}" class="card-container">
+    <div class="img-container">
+        <img
+            src="{{news.image ? news.image.getPath() : null | theme}}"
+            alt="{{news.title}}"
+        />
+    </div>
+    <div class="info-container">
+        <p class="date">{{news.created_at|date('d.m.y')}}</p>
+        <p class="subtitle sm">{{news.title}}</p>
+
+        <span class="redirect" 
+            >{{'site.read_more'|_}} <i aria-hidden="true" class="fa-solid fa-arrow-right"></i
+        ></span>
+    </div>
+</a>
+{% endfor %}
+        </div>
+
+        {% if hasButton %}
+         
+              <div class="actions">
+            <button aria-label="{{'site.load_more'|_}}" class="btn outlined load-more-news" data-page="{{ page }}">
+                {{'site.load_more'|_}}
+            </button>
+        </div>
+
+        {% endif %}
+
+    </div>
+</section>

@@ -1,0 +1,243 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js" integrity="sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.js"
+    integrity="sha512-TaKKBnlADXKbch/Zkh3tvL9W40DsRzgZHVOBqKAW+AdorbfEOQzy1kD7LwTWRnzFCzG2QKedSrFefQaJrFBmxA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+></script>
+<script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"
+></script>
+<script src="{{'assets/js/main.js' | theme}}"></script>
+<script src="{{this.page.script | theme}}"></script>
+<script>
+let prodCount = 9; // İlk dəfə görünən məhsul sayı
+let currentFilter = 'all';
+
+function updateProductDisplay(filter) {
+    let visibleProducts = 0; // Görünən məhsul sayını hesablamak üçün
+    let dataNotFoundMessage = document.querySelector('.data-not-found');
+
+    document.querySelectorAll('.product-card').forEach((product) => {
+        let product_data_filter = product.getAttribute('data-filter');
+
+        if (filter === 'all' || filter === product_data_filter) {
+            if (visibleProducts < prodCount) {
+                product.style.display = "grid";
+                visibleProducts++;
+            } else {
+                product.style.display = "none";
+            }
+        } else {
+            product.style.display = "none";
+        }
+    });
+
+    // Load More düyməsini gizləmək üçün yoxlama
+    let loadMoreButton = document.querySelector('.load-more-prod');
+    if (loadMoreButton) {
+        loadMoreButton.style.display = (visibleProducts < prodCount) ? 'none' : 'block';
+    }
+
+    // Data not found mesajını göstərmək üçün yoxlama
+    if (dataNotFoundMessage) {
+        dataNotFoundMessage.style.display = (visibleProducts === 0) ? 'block' : 'none';
+    }
+}
+
+function loadMoreProducts() {
+    // İkinci spinnerı göstər
+    showSecondSpinner();
+
+    setTimeout(() => {
+        prodCount += 4; // Hər load more klikində əlavə olunan məhsul sayı
+        updateProductDisplay(currentFilter);
+
+        // İkinci spinnerı gizlə
+        hideSecondSpinner();
+
+        // Data not found mesajını göstər
+        showDataNotFoundMessage();
+    }, 2000);
+}
+
+function showFirstSpinner() {
+    let firstSpinner = document.querySelector('.first-spinner-container');
+    if (firstSpinner) {
+        firstSpinner.style.display = 'block';
+    }
+}
+
+function hideFirstSpinner() {
+    let firstSpinner = document.querySelector('.first-spinner-container');
+    if (firstSpinner) {
+        firstSpinner.style.display = 'none';
+    }
+}
+
+function showSecondSpinner() {
+    let secondSpinner = document.querySelector('.second-spinner-container');
+    if (secondSpinner) {
+        secondSpinner.style.display = 'block';
+    }
+}
+
+function hideSecondSpinner() {
+    let secondSpinner = document.querySelector('.second-spinner-container');
+    if (secondSpinner) {
+        secondSpinner.style.display = 'none';
+    }
+}
+
+function showDataNotFoundMessage() {
+   
+    let dataNotFoundMessage = document.querySelector('.data-not-found');
+    if (dataNotFoundMessage) {
+        dataNotFoundMessage.style.display = 'block';
+    }
+}
+function hideDataNotFoundMessage() {
+   
+    let dataNotFoundMessage = document.querySelector('.data-not-found');
+    if (dataNotFoundMessage) {
+        dataNotFoundMessage.style.display = 'none';
+    }
+}
+document.querySelectorAll('.data-links > div').forEach(item => {
+    if (item.getAttribute('data-filter') == "all") {
+        item.classList.add('active');
+    }
+    item.addEventListener('click', (e) => {
+        hideDataNotFoundMessage()
+         document.querySelectorAll('.product-card').forEach((product) => {
+                 product.style.display="none"
+             })
+        showFirstSpinner();
+        setTimeout(() => {
+            hideFirstSpinner();
+            
+            document.querySelectorAll('.data-links > div').forEach(childItem => {
+                childItem.classList.remove('active');
+            });
+            item.classList.add('active');
+            currentFilter = item.getAttribute('data-filter');
+
+            prodCount = 9; // Kategoriya dəyişdikdə görünən məhsul sayını sıfırla
+           
+            updateProductDisplay(currentFilter);
+        }, 2000);
+    });
+});
+
+// İlk dəfə yükləməni etmək üçün
+updateProductDisplay(currentFilter);
+
+let loadMoreButton = document.querySelector('.load-more-prod');
+if (loadMoreButton) {
+    loadMoreButton.addEventListener('click', () => {
+        showSecondSpinner();
+        setTimeout(() => {
+            hideSecondSpinner();
+            loadMoreProducts();
+        }, 2000);
+    });
+}
+
+
+
+
+ function onLoadMoreFun(button, functionName, wrapper) {
+    var page = button.data("page");
+    
+    if (page) {
+        // Butonu devre dışı bırak
+        button.prop("disabled", true);
+
+        $.request(functionName, {
+            data: { page: page, filter: button ? button.data('filter') : null },
+            success: function (data) {
+                console.log(data);
+                if (data.html) {
+                    $(wrapper).append(data.html);
+                    button.data("page", data.page);
+                } else {
+                    button.hide();
+                }
+
+                // Butonu etkinleştir
+                button.prop("disabled", false);
+            },
+            error: function () {
+                // Hata durumunda da butonu etkinleştir
+                button.prop("disabled", false);
+            },
+        });
+    }
+}
+
+
+    $(document).on("click", ".load-more-products", function (e) {
+        onLoadMoreFun($(this), "onLoadMore", ".products-container");
+    });
+
+    // $(document).on("click", ".load-more-prod", function (e) {
+    //     onLoadMoreFun($(this), "onLoadMore", ".products-container");
+    // });
+
+    $(document).on("click", ".load-more-gallery", function () {
+        onLoadMoreFun($(this), "onLoadMore", ".img-gallery");
+    });
+
+    $(document).on("click", ".load-more-s-prods", function (e) {
+        onLoadMoreFun($(this), "onLoadMore", ".products-s");
+    });
+
+    $(document).on("click", ".load-more-s-recipes", function (e) {
+        onLoadMoreFun($(this), "onLoadMore", ".result-container");
+    });
+    $(document).on("click", ".load-more-s-news", function (e) {
+        onLoadMoreFun($(this), "onLoadMore", ".result-container");
+    });
+
+    $(document).on("click", ".load-more-s", function (e) {
+        onLoadMoreFun($(this), "onLoadMore", ".result-container");
+    });
+
+    $(document).on("click", ".load-more-recipes", function (e) {
+        onLoadMoreFun($(this), "onLoadMore", ".card-grid");
+    });
+     $(document).on("click", ".load-more-news", function (e) {
+        onLoadMoreFun($(this), "onLoadMore", ".card-grid");
+    });
+
+
+
+    
+
+        $('#sorting').change(function () {
+            var selectedSort = $(this).find(':selected').data('sort');
+            var url = '{{ 'blog'|page({ 'sort': '' }) }}'.replace('default', '') + selectedSort;
+            window.location.href = url;
+        });
+
+
+
+
+         $('#sorting_recipes').change(function () {
+            var selectedSort = $(this).find(':selected').data('sort');
+            var url = '{{ 'recipes'|page({ 'sort': '' }) }}'.replace('default', '') + selectedSort;
+            window.location.href = url;
+        });
+
+
+
+        document.querySelector('.search-bar form').addEventListener('submit', function(e) {
+            e.preventDefault()
+            let input = document.querySelector('.search-bar input')
+            var url = '{{ 'search_results'|page({ 'q': '' }) }}'.replace('default', '') + input.value
+            window.location.href = url;
+        })
+</script>

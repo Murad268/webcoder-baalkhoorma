@@ -1,0 +1,35 @@
+.result {
+  margin-block: 4.3rem 12rem;
+}
+
+.result > .container > .top > .result-categories {
+  margin-block: 6rem 5rem;
+}
+
+.result > .container > .top > .result-categories > p {
+  display: flex;
+  gap: 2.5rem;
+  text-transform: uppercase;
+  color: var(--clr-green);
+  font-weight: 500;
+}
+
+.result > .container > .top > .result-categories > p > span {
+  color: var(--clr-black-8);
+}
+
+.result > .container > .top > .result-categories > .checkbox-container {
+  margin-block-start: 2rem;
+}
+
+.result > .container > .result-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 25rem), 1fr));
+  gap: 3rem;
+}
+
+.result > .container > .actions {
+  margin-top: 6rem;
+  display: flex;
+  justify-content: center;
+}

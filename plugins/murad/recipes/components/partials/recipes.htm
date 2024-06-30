@@ -1,0 +1,18 @@
+{% for news in data %}
+<a href="{{ 'recipe_inner'|page({ slug: news.slug}) }}" class="card-container">
+    <div class="img-container">
+        <img
+            src="{{news.image ? news.image.getPath() : null | theme}}"
+            alt=""
+        />
+    </div>
+    <div class="info-container">
+        <p class="date">{{news.created_at |date('d.m.y')}}</p>
+        <p class="subtitle sm">{{news.title}}</p>
+
+        <span class="redirect" 
+            >{{'site.read_more'|_}} <i class="fa-solid fa-arrow-right"></i
+        ></span>
+    </div>
+</a>
+{% endfor %}

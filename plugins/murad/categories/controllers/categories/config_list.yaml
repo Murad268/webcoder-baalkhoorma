@@ -1,0 +1,16 @@
+list: $/murad/categories/models/categories/columns.yaml
+modelClass: Murad\Categories\Models\Categories
+title: Categories
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'murad/categories/categories/update/:id'
+structure:
+    showTree: true
+    showReorder: true
+    maxDepth: 2

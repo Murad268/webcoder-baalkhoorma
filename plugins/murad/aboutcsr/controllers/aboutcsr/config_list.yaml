@@ -1,0 +1,12 @@
+list: $/murad/aboutcsr/models/aboutcsr/columns.yaml
+modelClass: Murad\Aboutcsr\Models\AboutCSR
+title: AboutCSR
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'murad/aboutcsr/aboutcsr/update/:id'

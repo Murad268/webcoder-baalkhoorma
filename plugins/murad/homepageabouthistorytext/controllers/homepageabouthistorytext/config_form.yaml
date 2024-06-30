@@ -1,0 +1,10 @@
+name: HomePageAboutHistoryText
+form: $/murad/homepageabouthistorytext/models/homepageabouthistorytext/fields.yaml
+modelClass: Murad\Homepageabouthistorytext\Models\HomePageAboutHistoryText
+defaultRedirect: murad/homepageabouthistorytext/homepageabouthistorytext
+create:
+    redirect: 'murad/homepageabouthistorytext/homepageabouthistorytext/update/:id'
+    redirectClose: murad/homepageabouthistorytext/homepageabouthistorytext
+update:
+    redirect: murad/homepageabouthistorytext/homepageabouthistorytext
+    redirectClose: murad/homepageabouthistorytext/homepageabouthistorytext

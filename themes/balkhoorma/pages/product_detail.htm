@@ -1,0 +1,21 @@
+url = "/product-detail/:slug"
+layout = "default_layout"
+title = "product detail"
+styles = "assets/css/productDetail.css"
+script = "assets/js/productDetail.js"
+breadcrumb = "details"
+
+[builderDetails]
+modelClass = "Murad\Products\Models\Products"
+identifierValue = "{{ :slug }}"
+modelKeyColumn = "slug"
+displayColumn = "title"
+notFoundMessage = "Record not found"
+
+[detail]
+
+[viewBag]
+localeTitle[az] = "məhsul haqqında"
+localeTitle[ru] = "о продукте"
+==
+{% component 'detail' %}

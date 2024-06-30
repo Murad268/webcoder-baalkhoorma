@@ -1,0 +1,20 @@
+plugin:
+    name: 'murad.blogs::lang.plugin.name'
+    description: 'murad.blogs::lang.plugin.description'
+    author: murad
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Блоги
+        url: /
+        icon: icon-newspaper-o
+        sideMenu:
+            side-menu-item:
+                label: Новости
+                url: murad/news/news
+                icon: icon-newspaper-o
+            side-menu-item2:
+                label: Рецепты
+                url: murad/recipes/recipes
+                icon: icon-play-circle

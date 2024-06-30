@@ -1,0 +1,10 @@
+name: Products
+form: $/murad/products/models/products/fields.yaml
+modelClass: Murad\Products\Models\Products
+defaultRedirect: murad/products/products
+create:
+    redirect: 'murad/products/products/update/:id'
+    redirectClose: murad/products/products
+update:
+    redirect: murad/products/products
+    redirectClose: murad/products/products

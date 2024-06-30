@@ -1,0 +1,16 @@
+fields:
+    text:
+        label: 'текст о нас'
+        size: large
+        span: auto
+        placeholder: 'Введите текст о нас'
+        type: richeditor
+    map:
+        label: 'File Upload'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload

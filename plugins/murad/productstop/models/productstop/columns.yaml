@@ -1,0 +1,21 @@
+columns:
+    id:
+        label: id
+        type: number
+    title:
+        label: заголовок
+        type: text
+        searchable: true
+    image:
+        label: изоброжение,
+        type: image
+    text:
+        label: текст
+        type: text
+        searchable: true
+    created_at:
+        label: дата создание
+        type: datetime
+    updated_at:
+        label: дата обновление
+        type: datetime

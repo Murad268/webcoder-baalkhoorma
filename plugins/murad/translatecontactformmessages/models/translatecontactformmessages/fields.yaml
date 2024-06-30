@@ -1,0 +1,9 @@
+fields:
+    success_message:
+        label: 'Success message'
+        span: auto
+        type: text
+    success_title:
+        label: 'Success title'
+        span: auto
+        type: text

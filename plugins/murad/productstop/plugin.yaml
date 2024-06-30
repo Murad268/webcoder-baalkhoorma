@@ -1,0 +1,7 @@
+plugin:
+    name: 'murad.productstop::lang.plugin.name'
+    description: 'murad.productstop::lang.plugin.description'
+    author: murad
+    icon: oc-icon-adjust
+    homepage: ''
+

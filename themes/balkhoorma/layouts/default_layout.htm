@@ -1,0 +1,35 @@
+description = "default_layout"
+
+[sitePicker]
+
+[header]
+
+[footer]
+
+[meta]
+
+[lang]
+
+[header header2]
+==
+<!DOCTYPE html>
+        {% component 'lang' %}
+
+    <head>
+        {% component 'meta' %}
+        {% partial 'meta' %}
+        {% partial 'links' %}
+        {% styles %}
+        <title>{{this.page.title}}</title>
+    </head>
+    <body>
+        {% component 'header' %}
+        <main>
+            {% partial 'main' %}
+        </main>
+        {% component 'footer' %}
+        {% placeholder modals %}
+        {% partial 'scripts' %}
+        {% framework extras %} {% scripts %}
+    </body>
+</html>

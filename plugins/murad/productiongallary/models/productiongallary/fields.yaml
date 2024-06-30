@@ -1,0 +1,10 @@
+fields:
+    image:
+        label: 'изображение'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: full
+        type: fileupload

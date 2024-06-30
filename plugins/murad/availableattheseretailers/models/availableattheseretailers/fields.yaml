@@ -1,0 +1,15 @@
+fields:
+    image:
+        label: изображение
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    title:
+        label: заголовок
+        span: auto
+        placeholder: 'başlığı daxil edin'
+        type: text

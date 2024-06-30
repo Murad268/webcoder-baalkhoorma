@@ -1,0 +1,12 @@
+list: $/murad/homepageabouthistorytext/models/homepageabouthistorytext/columns.yaml
+modelClass: Murad\Homepageabouthistorytext\Models\HomePageAboutHistoryText
+title: HomePageAboutHistoryText
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'murad/homepageabouthistorytext/homepageabouthistorytext/update/:id'

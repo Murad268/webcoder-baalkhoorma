@@ -1,0 +1,108 @@
+url = "/news_blog/:slug"
+layout = "default_layout"
+title = "news_inner"
+styles = "assets/css/blogInner.css"
+breadcrumb = "blog inner"
+
+[builderDetails]
+modelClass = "Murad\News\Models\News"
+identifierValue = "{{ :slug }}"
+modelKeyColumn = "slug"
+displayColumn = "name"
+notFoundMessage = "Record not found"
+
+[newsrandom]
+==
+<section class="detail-container">
+    <div class="container">
+        <div class="left-side">
+            <div class="publish-date">
+                <p>{{'site.published'|_}}:</p>
+                <p>{{builderDetails.record.created_at |date('d.m.y')}}</p>
+            </div>
+            <div class="share">
+                <p>{{'site.share'|_}}:</p>
+               <div class="icons">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ env('APP_URL') }}/recipes/{{builderDetails.record.title}}"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/intent/tweet?url={{ env('APP_URL') }}/recipes/{{builderDetails.record.title}}"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <article>
+            <h3>{{builderDetails.record.title}}</h3>
+            <div class="main_slider">
+               <button id="prevBtn"><i class="fa-solid fa-arrow-left"></i></button>
+               <div class="img-container slider_img">
+                   <img id="mainImage" src="{{builderDetails.record.image.path}}" alt="" />
+               </div>
+               <button id="nextBtn"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+            <div class="thumbnails">
+                 <div><img class="thumbnail" src="{{builderDetails.record.image.path}}" alt="Image 1"></div>
+                {% for image in builderDetails.record.images %}
+                     <div><img class="thumbnail" src="{{image.path}}" alt="Image 1"></div>
+                {% endfor %}
+          
+          
+               
+            </div>
+            <p class="detail">{{builderDetails.record.desc | raw}}</p>
+        </article>
+        <div class="related">
+            <h4>{{'site.discover'|_}}</h4>
+             {% component 'newsrandom' %}
+        </div>
+    </div>
+</section>
+
+<script>
+    const mainImage = document.getElementById('mainImage');
+    const thumbnails = document.querySelectorAll('.thumbnail');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    let currentIndex = 0;
+
+    function showImage(src) {
+      mainImage.src = src;
+      updateActiveThumbnail();
+    }
+
+    function updateActiveThumbnail() {
+        thumbnails.forEach((thumbnail, index) => {
+        if (index === currentIndex) {
+             thumbnail.classList.add('active');
+        } else {
+            thumbnail.classList.remove('active');
+        }
+     });
+   }
+
+  updateActiveThumbnail();
+
+  thumbnails.forEach((thumbnail, index) => {
+      thumbnail.addEventListener('click', () => {
+          currentIndex = index;
+          showImage(thumbnail.src);
+      });
+  });
+
+  prevBtn.addEventListener('click', () => {
+      if (currentIndex > 0) {
+           currentIndex--;
+      } else {
+           currentIndex = thumbnails.length - 1;
+      }
+           showImage(thumbnails[currentIndex].src);
+   });
+
+   nextBtn.addEventListener('click', () => {
+       if (currentIndex < thumbnails.length - 1) {
+          currentIndex++;
+       } else {
+          currentIndex = 0;
+       }
+     showImage(thumbnails[currentIndex].src);
+   });
+
+</script>

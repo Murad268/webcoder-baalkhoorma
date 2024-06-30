@@ -1,0 +1,36 @@
+fields:
+    video_link:
+        label: 'ссылка на видео'
+        span: auto
+        placeholder: 'введите ссылку на видео'
+        type: text
+    image:
+        label: "изображение"
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: full
+        type: fileupload
+    text1:
+        label: 'первый текст'
+        size: large
+        span: auto
+        placeholder: 'введите первый текст'
+        type: richeditor
+    text2:
+        label: 'второй текст'
+        size: large
+        span: auto
+        placeholder: 'введите второй текст'
+        type: richeditor
+    video_image:
+        label: 'видео рисунокi'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: full
+        type: fileupload

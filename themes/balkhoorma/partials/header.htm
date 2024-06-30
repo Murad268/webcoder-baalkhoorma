@@ -1,0 +1,123 @@
+[sitePicker]
+==
+<header>
+    <div class="container">
+        <nav>
+            <div class="logo-container">
+                <a href="./index.html">
+                    <img src="{{'assets/imgs/header-logo.svg' | theme}}" alt="logo" />
+                </a>
+            </div>
+            <div class="link-container">
+                <ul>
+                    <li tabindex="0" class="has-child">
+                        <span>{{'menu.about'|_}}</span>
+                        <ul>
+                            <li class="back-btn">
+                                <button>
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </button>
+                            </li>
+                            <li><a href="{{ 'about_history' | page }}">{{'menu.about_history'|_}}</a></li>
+                            <li><a href="{{ 'about_csr' | page }}">{{'menu.about_csr'|_}}</a></li>
+                        </ul>
+                    </li>
+                    <li tabindex="0" class="has-child">
+                        <span>{{'menu.production'|_}}</span>
+                        <ul>
+                            <li class="back-btn">
+                                <button>
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </button>
+                            </li>
+                            <li><a href="{{ 'productionfactoryprocess' | page }}">{{'menu.factory_proccess'|_}}</a></li>
+                            <li><a href="{{ 'productiongallery' | page }}">{{'menu.gallary'|_}}</a></li>
+                        </ul>
+                    </li>
+                    <li tabindex="0" class="has-child">
+                        <span>{{'menu.products'|_}}</span>
+                        <ul>
+                            <li class="back-btn">
+                                <button>
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </button>
+                            </li>
+                            <li><a href="{{ 'products' | page }}">{{'menu.all_products'|_}}</</a></li>
+                            <li><a href="">CRS</a></li>
+                            <li><a href="">CRS</a></li>
+                            <li><a href="">CRS</a></li>
+                            <li><a href="">CRS</a></li>
+                            <li><a href="">Others</a></li>
+                        </ul>
+                    </li>
+                    <li tabindex="0" class="has-child">
+                        <span>{{'menu.blog'|_}}</span>
+                        <ul>
+                            <li class="back-btn">
+                                <button>
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </button>
+                            </li>
+                            <li><a href="{{ 'blog'|page }}">{{'menu.news'|_}}</a></li>
+                            <li><a href="{{ 'recipes'|page }}">{{'menu.recipes'|_}}</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{{ 'menu.contact' | page }}">{{'menu.contact'|_}}</a></li>
+                </ul>
+                <div class="language-switch">
+                    <ul>
+                        {% for site in sitePicker.sites %}
+                        <li>
+                            <a class="btn outlined" href="{{ site.url }}"
+                                >{{ site.name }}</a
+                            >
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="right-side">
+                <div class="language-switch">
+                   <select class="form-control" onchange="window.location.assign(this.value)">
+                        {% for site in sitePicker.sites %}
+                            <option value="{{ site.url }}" {{ this.site.code == site.code ? 'selected' }}>{{ site.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="search-btn">
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+
+                <div class="hamburger-btn">
+                    <button class="open-btn">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <button class="close-btn">
+                        <i class="fa-solid fa-x"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="search-bar">
+        <div class="container">
+            <form action="{{'search_results' | page}}">
+                <label for="search" class="magnifier-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </label>
+                <input class="input" type="text" name="q" id="search" />
+            </form>
+            <button class="close-btn">
+                <i class="fa-solid fa-x"></i>
+            </button>
+        </div>
+    </div>
+</header>
+
+<script>
+    document.querySelector('.search-bar form').setAttribute('action', document.querySelector('.search-bar form').getAttribute('action').replace('default', ''));
+</script>

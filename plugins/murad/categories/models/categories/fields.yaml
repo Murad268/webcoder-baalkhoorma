@@ -1,0 +1,40 @@
+fields:
+    title:
+        label: 'название категории'
+        span: auto
+        placeholder: 'введите название категории'
+        type: text
+    slug:
+        label: 'слаг категории'
+        span: auto
+        placeholder: 'Введите слаг категории'
+        preset:
+            field: title
+            type: slug
+        type: text
+    is_active:
+        label: 'активная категория'
+        span: auto
+        type: switch
+    parent:
+        label: 'родительская категория'
+        nameFrom: title
+        descriptionFrom: description
+        span: auto
+        type: relation
+        emptyOption: '--- əsas kateqoriya kimi yarat ----'
+    desc:
+        label: 'описание категории'
+        size: large
+        span: full
+        placeholder: 'enter the category description'
+        type: richeditor
+    image:
+        label: изоброжение
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload

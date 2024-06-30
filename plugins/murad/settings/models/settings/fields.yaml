@@ -1,0 +1,58 @@
+fields:
+    email:
+        label: email
+        span: auto
+        placeholder: 'введите адрес электронной почты'
+        type: text
+    addres:
+        label: addres
+        span: auto
+        placeholder: 'введите адрес'
+        type: text
+    phone1:
+        label: 'phone 1'
+        span: auto
+        placeholder: 'введите первый телефон'
+        type: text
+    phone2:
+        label: 'введите второй телефон'
+        span: auto
+        placeholder: 'второй телефон'
+        type: text
+    nav_logo:
+        label: 'верхняя лого'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    footer_logo:
+        label: 'нижняя лого'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    copywrite_text:
+        label: 'текст копирайта'
+        span: auto
+        placeholder: 'введите текст копирайта'
+        type: text
+    favicon:
+        label: фавикон
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    internal_quality_policy_text:
+        label: 'Текст внутренней политики качества'
+        size: huge
+        span: full
+        type: richeditor

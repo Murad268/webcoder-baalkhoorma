@@ -1,0 +1,85 @@
+columns:
+    id:
+        label: id
+        type: number
+        sortable: true
+    short_desc:
+        label: 'короткое описание товара'
+        type: text
+        searchable: true
+        sortable: true
+    desc:
+        label: 'описание товара'
+        type: text
+        searchable: true
+        sortable: true
+    images:
+        label: 'рисунки товара'
+        type: image
+        searchable: false
+        sortable: false
+    spesifications:
+        label: 'спефикации товара'
+        type: text
+        searchable: true
+        sortable: true
+    benefits:
+        label: 'преимущества товара'
+        type: text
+        searchable: true
+        sortable: true
+    production:
+        label: произвоство
+        type: text
+        searchable: true
+        sortable: true
+    slug:
+        label: slug
+        type: text
+        searchable: true
+        sortable: true
+    is_active:
+        label: 'активный товар'
+        type: text
+        searchable: true
+        sortable: true
+    created_at:
+        label: 'дата добавление'
+        type: datetime
+        searchable: true
+        sortable: true
+    updated_at:
+        label: 'дата обновление'
+        type: datetime
+        searchable: true
+        sortable: true
+    deleted_at:
+        label: 'дата удаление'
+        type: datetime
+        searchable: true
+        sortable: true
+    title:
+        label: 'заголовок товара'
+        type: text
+        searchable: true
+        sortable: true
+    category_id:
+        label: 'id категории'
+        type: number
+        searchable: true
+        sortable: true
+    details:
+        label: 'подробности о товаре'
+        type: text
+        searchable: true
+        sortable: true
+    add_home_page_slider:
+        label: 'добавить в карусель главной страницы страницы'
+        type: text
+        searchable: true
+        sortable: true
+    order_proccess:
+        label: 'процесс заказа'
+        type: text
+        searchable: true
+        sortable: true

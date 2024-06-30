@@ -1,0 +1,21 @@
+<div class="related-card-container">
+    {% for news in data %}
+    <a title=""{{news.title}}" aria-label=""{{news.title}}" href="{{ 'blog_inner'|page({ slug: news.slug}) }}" class="card-container">
+        <div class="img-container">
+            <img
+                src="{{news.image ? news.image.getPath() : null | theme}}"
+                alt="{{news.title}}"
+            />
+        </div>
+        <div class="info-container">
+            <p class="date">{{news.created_at}}</p>
+            <p class="subtitle sm">{{news.title}}</p>
+            <span
+                class="redirect"
+                
+                >{{'site.read_more'|_}} <i aria-hidden="true" class="fa-solid fa-arrow-right"></i
+            ></span>
+        </div>
+    </a>
+    {% endfor %}
+</div>

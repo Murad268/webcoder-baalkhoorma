@@ -1,0 +1,24 @@
+url = "/news/:sort"
+layout = "default_layout"
+title = "news"
+styles = "assets/css/blog.css"
+breadcrumb = "blog"
+link = "news"
+[viewBag]
+localeTitle[az] = "xəbərlər"
+localeTitle[ru] = "новости"
+
+[news]
+
+[builderList]
+modelClass = "Murad\News\Models\News"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "name"
+noRecordsMessage = "No records found"
+detailsPage = "blog_inner"
+detailsKeyColumn = "slug"
+detailsUrlParameter = "slug"
+pageNumber = "{{ :page }}"
+==
+{% component 'news' %}

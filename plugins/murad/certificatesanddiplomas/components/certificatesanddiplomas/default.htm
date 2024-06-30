@@ -1,0 +1,63 @@
+{% if certificates.count>0%}
+<section class="certificates">
+    <div class="container">
+        <h3 style="margin-top: 40px;">{{'section.certificates_and_diplomas'|_}}</h3>
+        <div class="certificates-slider-container">
+            <div class="swiper certificates-slider">
+                <div class="swiper-wrapper">
+                    {% for certificate in certificates %}
+                    <div class="swiper-slide">
+                        <img src="{{certificate.image.path}}" alt="{{certificate.title}}" />
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="swiper-pagination"></div>
+                {% if certificates.count > 4 %}
+                <div class="actions">
+                    <div class="button-prev">
+                        <i aria-hidden="true" class="fa-solid fa-arrow-left"></i>
+                    </div>
+                    <div class="button-next">
+                        <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="swiper-scrollbar"></div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+{% if certificatesPol.count>0%}
+<section class="certificates">
+    <div class="container">
+        <h3 style="margin-top: 40px;">{{'section.certificates_and_diplomasP'|_}}</h3>
+        <div class="certificates-slider-container">
+            <div class="certificates-slider-text">
+                {{internal_quality_policy_text | raw}}
+            </div>
+            <div class="swiper certificates-slider" style="margin-top: 40px;">
+                <div class="swiper-wrapper">
+                    {% for certificate in certificatesPol %}
+                    <div class="swiper-slide">
+                        <img src="{{certificate.image.path}}" alt="{{certificate.title}}" />
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="swiper-pagination"></div>
+                {% if certificatesPol.count > 4 %}
+                <div class="actions">
+                    <div class="button-prev">
+                        <i aria-hidden="true" class="fa-solid fa-arrow-left"></i>
+                    </div>
+                    <div class="button-next">
+                        <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="swiper-scrollbar"></div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}

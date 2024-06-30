@@ -1,0 +1,27 @@
+<section class="gallery">
+    <div class="container">
+        
+        <div class="img-gallery">
+            {% for image in data %}
+            <div class="img-container">
+                <a title="{{data.id}}" aria-label="{{data.id}}" onclick="event.preventDefault()" href="{{image.image.path}}">
+                    <img src="{{image.image.path}}" alt="{{data.id}}" />
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+
+        {% if hasButton %}
+            <div class="actions">
+            <button
+                data-page="{{ page }}"
+                class="btn outlined load-more-gallery"
+                aria-label=" {{'site.load_more'|_}}"
+            >
+                {{'site.load_more'|_}}
+            </button>
+        </div>
+        {% endif %}
+
+    </div>
+</section>

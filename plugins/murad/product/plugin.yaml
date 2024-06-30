@@ -1,0 +1,20 @@
+plugin:
+    name: 'murad.product::lang.plugin.name'
+    description: 'murad.product::lang.plugin.description'
+    author: murad
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Продукты
+        url: /
+        icon: icon-shopping-cart
+        sideMenu:
+            side-menu-item:
+                label: 'Верхний текст продуктов'
+                url: murad/productstop/productstop/update/1
+                icon: icon-text-width
+            side-menu-item2:
+                label: Продукты
+                url: /murad/products/products
+                icon: icon-shopping-cart

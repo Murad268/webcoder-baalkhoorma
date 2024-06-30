@@ -1,0 +1,20 @@
+plugin:
+    name: 'murad.policy::lang.plugin.name'
+    description: 'murad.policy::lang.plugin.description'
+    author: murad
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Конфиденциальность
+        url: /
+        icon: icon-life-ring
+        sideMenu:
+            side-menu-item:
+                label: 'Политика конфиденциальности'
+                url: murad/privacypolicy/privacypolicy/update/1
+                icon: icon-edit
+            side-menu-item2:
+                label: 'Условия использования'
+                url: murad/termsofuse/termsofuse/update/1
+                icon: icon-edit

@@ -1,0 +1,27 @@
+columns:
+    id:
+        label: id
+        type: number
+    title:
+        label: заголовок
+        type: text
+        searchable: true
+    image:
+        label: изображение
+        type: image
+    desc:
+        label: описание
+        type: text
+        searchable: true
+    created_at:
+        label: дата создание
+        type: datetime
+    updated_at:
+        label: дата обновление
+        type: datetime
+    slug:
+        label: слаг
+        type: text
+    is_active:
+        label: активный блог
+        type: text

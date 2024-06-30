@@ -1,0 +1,12 @@
+fields:
+    title:
+        label: 'заголовок'
+        span: auto
+        placeholder: 'введите заголовок'
+        type: text
+    description:
+        label: 'текст'
+        size: large
+        span: auto
+        placeholder: 'введите текст'
+        type: richeditor

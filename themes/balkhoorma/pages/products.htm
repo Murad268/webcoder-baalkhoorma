@@ -1,0 +1,56 @@
+url = "/products"
+layout = "default_layout"
+title = "products"
+styles = "assets/css/products.css"
+breadcrumb = "products"
+[viewBag]
+localeTitle[az] = "məhsullar"
+localeTitle[ru] = "продукты"
+[about]
+[categories]
+[products]
+[builderList builderList2]
+modelClass = "Murad\Products\Models\Products"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "title"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsKeyColumn = "slug"
+detailsUrlParameter = "slug"
+recordsPerPage = 4
+pageNumber = "{{ :1 }}"
+[builderList]
+modelClass = "Murad\Categories\Models\Categories"
+scope = "-"
+scopeValue = "{{ :id }}"
+displayColumn = "title"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsKeyColumn = "slug"
+detailsUrlParameter = "slug"
+pageNumber = "{{ :page }}"
+==
+
+<div class="container">
+    <div class="breadcrumb">
+        <ul>
+            <li><a href="{{'home'|page}}">{{'site.home'|_}}</a></li>
+            <li>
+                <a href="{{ 'products' | page }}">{{'site.products'|_}}</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<section class="banner">
+    <div class="top" style="--bg-img: url(../imgs/about-bg.jpg)">
+        <div class="container">
+            <h2>{{"site.products"|_}}</h2>
+        </div>
+    </div>
+</section>
+
+{% component 'about' %}
+{% component 'categories' %}
+{% component 'products' %}

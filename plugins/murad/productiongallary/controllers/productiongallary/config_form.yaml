@@ -1,0 +1,10 @@
+name: ProductionGallary
+form: $/murad/productiongallary/models/productiongallary/fields.yaml
+modelClass: Murad\Productiongallary\Models\ProductionGallary
+defaultRedirect: murad/productiongallary/productiongallary
+create:
+    redirect: 'murad/productiongallary/productiongallary/update/:id'
+    redirectClose: murad/productiongallary/productiongallary
+update:
+    redirect: murad/productiongallary/productiongallary
+    redirectClose: murad/productiongallary/productiongallary

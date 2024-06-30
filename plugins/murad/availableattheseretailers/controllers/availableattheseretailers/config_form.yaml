@@ -1,0 +1,10 @@
+name: AVAILABLEATTHESERETAILERS
+form: $/murad/availableattheseretailers/models/availableattheseretailers/fields.yaml
+modelClass: Murad\Availableattheseretailers\Models\AVAILABLEATTHESERETAILERS
+defaultRedirect: murad/availableattheseretailers/availableattheseretailers
+create:
+    redirect: 'murad/availableattheseretailers/availableattheseretailers/update/:id'
+    redirectClose: murad/availableattheseretailers/availableattheseretailers
+update:
+    redirect: murad/availableattheseretailers/availableattheseretailers
+    redirectClose: murad/availableattheseretailers/availableattheseretailers

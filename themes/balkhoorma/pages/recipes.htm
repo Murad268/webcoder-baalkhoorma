@@ -1,0 +1,13 @@
+url = "/recipes/:sort"
+layout = "default_layout"
+title = "recipes"
+styles = "assets/css/blog.css"
+link = "recipes"
+
+[viewBag]
+localeTitle[az] = "reseptlər"
+localeTitle[ru] = "рецепты"
+
+[recipes]
+==
+{% component 'recipes' %}

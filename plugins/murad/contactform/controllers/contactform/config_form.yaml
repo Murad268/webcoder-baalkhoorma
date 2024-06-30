@@ -1,0 +1,10 @@
+name: ContactForm
+form: $/murad/contactform/models/contactform/fields.yaml
+modelClass: Murad\Contactform\Models\ContactForm
+defaultRedirect: murad/contactform/contactform
+create:
+    redirect: 'murad/contactform/contactform/update/:id'
+    redirectClose: murad/contactform/contactform
+update:
+    redirect: murad/contactform/contactform
+    redirectClose: murad/contactform/contactform

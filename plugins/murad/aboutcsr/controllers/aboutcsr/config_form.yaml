@@ -1,0 +1,10 @@
+name: AboutCSR
+form: $/murad/aboutcsr/models/aboutcsr/fields.yaml
+modelClass: Murad\Aboutcsr\Models\AboutCSR
+defaultRedirect: murad/aboutcsr/aboutcsr
+create:
+    redirect: 'murad/aboutcsr/aboutcsr/update/:id'
+    redirectClose: murad/aboutcsr/aboutcsr
+update:
+    redirect: murad/aboutcsr/aboutcsr
+    redirectClose: murad/aboutcsr/aboutcsr

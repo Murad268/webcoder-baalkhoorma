@@ -1,0 +1,11 @@
+plugin:
+    name: 'murad.categories::lang.plugin.name'
+    description: 'murad.categories::lang.plugin.description'
+    author: murad
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Категории
+        url: murad/categories/categories
+        icon: icon-th-list

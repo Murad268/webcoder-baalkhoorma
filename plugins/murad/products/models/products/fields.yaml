@@ -1,0 +1,85 @@
+tabs:
+    fields:
+        category:
+            label: категория
+            nameFrom: title
+            descriptionFrom: description
+            span: auto
+            type: relation
+            tab: 'Tab 1'
+        is_active:
+            label: 'активный товар'
+            span: auto
+            type: switch
+            tab: 'Tab 1'
+        add_home_page_slider:
+            label: 'карусель главной страницы'
+            span: auto
+            type: switch
+            tab: 'Tab 1'
+            placeholder: 'добавить в карусель главной страницы'
+        order_proccess:
+            label: 'процесс заказа'
+            size: large
+            span: auto
+            placeholder: 'введите процесс заказа'
+            type: richeditor
+            tab: 'Tab 1'
+fields:
+    title:
+        label: 'заголовок товара'
+        span: auto
+        placeholder: 'введите заголовок товара'
+        type: text
+    slug:
+        label: 'слаг товара'
+        span: auto
+        placeholder: 'введите слаг товара'
+        preset:
+            field: title
+            type: slug
+        type: text
+    short_desc:
+        label: 'короткая описание товара'
+        span: auto
+        placeholder: 'введите короткое описание товара'
+        type: text
+    images:
+        label: 'рисунки товра'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: right
+        type: fileupload
+    spesifications:
+        label: 'спецификации продукта'
+        size: large
+        span: auto
+        placeholder: 'введите спецификацию продукта'
+        type: richeditor
+    desc:
+        label: 'описание твара'
+        size: large
+        span: auto
+        placeholder: 'введите описание твара'
+        type: richeditor
+    benefits:
+        label: 'преимущества товара'
+        size: large
+        span: auto
+        placeholder: 'введите преимущества товара'
+        type: richeditor
+    production:
+        label: произвоство
+        size: large
+        span: auto
+        placeholder: 'введите произвоство'
+        type: richeditor
+    details:
+        label: 'подробности о товаре'
+        size: large
+        span: auto
+        placeholder: 'введите подробности о товаре'
+        type: richeditor

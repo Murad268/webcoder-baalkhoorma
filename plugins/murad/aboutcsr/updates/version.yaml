@@ -1,0 +1,11 @@
+v1.0.1:
+    - 'Initialize plugin'
+v1.0.2:
+    - 'Created table murad_aboutcsr_'
+    - builder_table_create_murad_aboutcsr_.php
+v1.0.3:
+    - 'Updated table murad_aboutcsr_'
+    - builder_table_update_murad_aboutcsr_.php
+v1.0.4:
+    - 'Updated table murad_aboutcsr_'
+    - builder_table_update_murad_aboutcsr__2.php

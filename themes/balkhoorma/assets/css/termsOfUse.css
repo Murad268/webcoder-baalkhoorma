@@ -1,0 +1,24 @@
+.sm-container {
+  width: min(var(--container-width-sm), 74rem);
+  margin-inline: auto;
+  margin-block: 6rem 12rem;
+}
+
+.sm-container > h3 {
+  color: var(--clr-green);
+  margin-block-end: 6rem;
+}
+
+.sm-container > p {
+  color: var(--clr-black-8);
+}
+
+@media screen and (max-width: 480px) {
+  .sm-container {
+    margin-block: 3rem 9rem;
+  }
+
+  .sm-container > h3 {
+    margin-block-end: 3rem;
+  }
+}

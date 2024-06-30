@@ -1,0 +1,72 @@
+<section class="result">
+    <div class="container">
+        <div class="top">
+            <div class="breadcrumb">
+                <ul>
+                    <li>
+                        <a title="{{'site.home'|_}}" aria-label="{{'site.home'|_}}" href="{{'home' | page}}">{{'site.home'|_}}</a>
+                    </li>
+                    <li>
+                        <a title="{{'site.search_results'|_}}" aria-label="{{'site.search_results'|_}}">{{'site.search_results'|_}}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="result-categories">
+                <p>{{'site.search_results_for'|_}}: <span>{{q}}</span></p>
+                <div class="checkbox-container">
+                    <div class="active">
+                        <a title="{{'site.all'|_}}" aria-label="{{'site.all'|_}}" href="{{ 'search_results'|page({ q: q }) }}"
+                            >{{'site.all'|_}}</a
+                        >
+                    </div>
+                    <div>
+                        <a title=">{{'site.news'|_}}" aria-label=">{{'site.news'|_}}" href="{{ 'search_results_for_news'|page({ n: q }) }}"
+                            >{{'site.news'|_}}</a
+                        >
+                    </div>
+                    <div>
+                        <a
+                            title="{{'site.recipes'|_}}"
+                            aria-label="{{'site.recipes'|_}}"
+                            href="{{ 'search_results_for_recipes'|page({ r: q }) }}"
+                            >{{'site.recipes'|_}}</a
+                        >
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        {% if datas.count > 0 %}
+        <div class="result-container">
+            {% for data in datas %}
+            <div class="card-container">
+                <div class="img-container">
+                    <img src="{{data.image.path}}" alt="{{data.title}}" />
+                </div>
+                <div class="info-container">
+                    <p class="date">{{data.created_at|date('d.m.y')}}</p>
+                    <p class="subtitle sm">{{data.title}}</p>
+                    <a
+                        title="{{ 'site.read_more'|_ }}"
+                        aria-label ="{{ 'site.read_more'|_ }}"
+                        class="redirect"
+                        href="{{ data.type == 'news' ? 'blog_inner'|page({ slug: data.slug }) : 'recipe_inner'|page({ slug: data.slug }) }}"
+                    >
+                        {{ 'site.read_more'|_ }}
+                        <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+            <div class="actions">
+                <button aria-label="{{'site.load_more'|_}}" data-page="{{page}}" class="btn outlined load-more-s">
+                    {{'site.load_more'|_}}
+                </button>
+            </div>
+ 
+
+        {% else %} data is not found {% endif %}
+    </div>
+</section>

@@ -1,0 +1,300 @@
+/* details */
+.product-detail {
+  margin-top: 3.8rem;
+}
+
+.product-detail > .container > .description {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 9rem;
+  position: relative;
+}
+
+.product-detail > .container > .description > .product-name {
+  grid-column: 1/1;
+  grid-row: 1/2;
+  color: var(--clr-green);
+}
+
+.product-detail > .container > .description > .text-container {
+  grid-column: 1/1;
+  grid-row: 2/3;
+  min-height:50rem;
+}
+
+.product-detail > .container > .description > .text-container > * {
+  margin-block: 4rem;
+}
+
+.product-detail
+  > .container
+  > .description
+  > .text-container
+  > .product-category {
+  display: flex;
+  gap: 3rem;
+  color: var(--clr-green);
+  text-transform: uppercase;
+}
+
+.product-detail
+  > .container
+  > .description
+  > .text-container
+  > .product-category
+  > span {
+  color: var(--clr-black-8);
+}
+
+.product-detail
+  > .container
+  > .description
+  > .text-container
+  > .product-description {
+  color: var(--clr-black-6);
+}
+
+.product-detail > .container > .description > .slider-container img {
+  object-fit: contain;
+  height:100%;
+  width:100%;
+}
+
+.product-detail > .container > .description > .slider-container {
+  grid-column: 2/3;
+  grid-row: 1/3;
+  width: 100%;
+  height: 100%;
+  max-height: 60rem;
+
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+
+  --gap: 3rem;
+  gap: var(--gap);
+}
+
+.product-detail > .container > .description > .slider-container > .main-slider {
+  height: calc(70% - calc(var(--gap) / 2));
+  width: 100%;
+}
+
+.product-detail
+  > .container
+  > .description
+  > .slider-container
+  > .thumbs-slider {
+  height: calc(30% - calc(var(--gap) / 2));
+  width: 100%;
+}
+
+/* tabmenu */
+
+.tabmenu > .container > .tabmenu-container {
+  margin-block: 6rem;
+}
+
+.tabmenu > .container > .tabmenu-container > ul {
+  display: flex;
+  position: relative;
+  overflow-x: auto;
+  gap: 3rem;
+}
+
+.tabmenu > .container > .tabmenu-container > ul::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--clr-black);
+  opacity: 0.3;
+}
+
+.tabmenu > .container > .tabmenu-container > ul > li {
+  flex: 1;
+  display: flex;
+  cursor: pointer;
+  color: var(--clr-black-6);
+}
+
+.tabmenu > .container > .tabmenu-container > ul > li.active {
+  color: var(--clr-orange);
+  opacity: 1;
+  position: relative;
+}
+
+.tabmenu > .container > .tabmenu-container > ul > li.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 80%;
+  height: 0.7rem;
+  border-radius: 5px 5px 0px 0px;
+  background-color: var(--clr-orange);
+}
+
+.tabmenu > .container > .tabmenu-container > ul > li > a {
+  flex: 1;
+  text-align: center;
+  pointer-events: none;
+  padding-block: 3rem;
+  text-transform: uppercase;
+}
+
+.tabmenu > .container > .tabs > div:not(.active) {
+  display: none;
+}
+
+.tabmenu > .container > .tabs > div > h4 {
+  color: var(--clr-green);
+  margin-block-end: 5rem;
+}
+
+.tabmenu > .container > .tabs > div > p {
+  max-width: 85rem;
+  color: var(--clr-black-6);
+}
+
+.tabmenu > .container > .tabs > div > .img-container {
+  max-width: 107rem;
+}
+
+/* related products */
+
+.related-products {
+  margin-block: 14rem 12rem;
+}
+
+.related-products > .container > h3 {
+  color: var(--clr-green);
+  margin-bottom: 4rem;
+}
+
+.related-products .product-card {
+  display: grid;
+  grid-template-rows: 25rem auto;
+  gap: 1.5rem;
+}
+
+.related-products .product-card > .img-container > img {
+  object-fit: contain;
+  width:100%;
+  height:100%;
+}
+
+.related-products .product-card > .info-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.related-products .product-card > .info-container > .product-name {
+  color: var(--clr-green);
+  margin-bottom: 2rem;
+}
+
+.related-products .product-card > .info-container > .product-description {
+  margin-block: auto 5rem;
+  color: var(--clr-black-6);
+}
+
+.related-products .product-card > .info-container > a {
+  margin-top: auto;
+  justify-content: center;
+  color: var(--clr-orange);
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.related-products .swiper-scrollbar {
+  background: color-mix(in srgb, var(--clr-orange), rgba(255, 255, 255, 0.5));
+}
+
+.related-products .swiper-scrollbar-drag {
+  background-color: var(--clr-orange);
+}
+
+.related-products .swiper-horizontal > .swiper-scrollbar,
+.swiper-scrollbar.swiper-scrollbar-horizontal {
+  position: relative;
+  margin-top: 2.5rem;
+}
+
+.related-products .related-products-slider > .actions {
+  display: flex;
+  justify-content: end;
+  gap: 1.5rem;
+  margin-top: 5rem;
+}
+
+.related-products .related-products-slider > .actions > [class*="button"] {
+  width: 3.8rem;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  background-color: var(--clr-orange);
+  border-radius: 50%;
+  color: var(--clr-white);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .product-detail > .container > .description {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto 50rem auto;
+  }
+
+  .product-detail > .container > .description > .slider-container {
+    grid-column: 1/1;
+    grid-row: 2/3;
+  }
+
+  .product-detail > .container > .description > .text-container {
+    grid-row: 3/4;
+    min-height:unset;
+  }
+
+  .product-detail > .container > .description > .product-name {
+    margin-bottom: 2rem;
+  }
+
+  .product-detail
+    > .container
+    > .description
+    > .text-container
+    > .product-category {
+    margin-block: 3.5rem;
+  }
+
+  .product-detail > .container > .description > .slider-container {
+    --gap: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .products .product-card > .info-container > .product-name {
+    font-size: 1.6rem;
+  }
+
+  .related-products {
+    margin-block: 6rem 9rem;
+  }
+
+  .tabmenu > .container > .tabmenu-container > ul > li.active::after {
+    width: 100%;
+  }
+
+  .tabmenu > .container > .tabmenu-container {
+    margin-block: 2rem 4rem;
+  }
+
+  .tabmenu > .container > .tabs > div > h4 {
+    margin-block-end: 3rem;
+  }
+}

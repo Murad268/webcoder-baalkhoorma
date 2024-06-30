@@ -1,0 +1,37 @@
+url = "/404"
+title = "error"
+==
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+
+        <link rel="stylesheet" href="{{'assets/css/style.css' | theme}}" />
+        <link rel="stylesheet" href="{{'assets/css/general.css' | theme}}" />
+        <link rel="stylesheet" href="{{'assets/css/error.css' | theme}}" />
+    </head>
+    <body>
+        <main>
+            <div class="container">
+                <div class="text-container">
+                    <h1>404</h1>
+                    <h3>{{'site.notfound'|_}}</h3>
+                    <a href="{{ 'home' | page }}" class="redirect btn outlined">
+                        {{'site.home'|_}}
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="img-container">
+                    <img src="{{'assets/imgs/err.jpg' | theme}}" alt="" />
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

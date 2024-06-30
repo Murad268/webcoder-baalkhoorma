@@ -1,0 +1,18 @@
+{% for product in selectedProducts %}
+<div class="product-card">
+    <div class="img-container">
+        <img src="{{product.images.first.path}}" alt="{{product.title}}" />
+    </div>
+    <div class="info-container">
+        <p class="product-name subtitle">{{product.title}}</p>
+        <p class="product-description">{{product.short_desc}}</p>
+        <a
+            title="{{'site.read_more'|_}}"
+            aria-label="{{'site.read_more'|_}}"
+            href="{{ 'product_detail'|page({ slug: product.slug}) }}"
+            class="redirect"
+            >{{'site.read_more'|_}} <i class="fa-solid fa-arrow-right"></i
+        ></a>
+    </div>
+</div>
+{% endfor %}

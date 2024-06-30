@@ -1,0 +1,13 @@
+<div class="about">
+    <div class="text-container">
+        <p>
+            {{factoryProccessAbout.text1 | raw}}
+        </p>
+        <a title="{{ 'site.learn_more'|_ }}" aria-label="{{ 'site.learn_more'|_ }}" href="{{'productionfactoryprocess' | page}}" class="redirect"
+            >{{ 'site.learn_more'|_ }} <i aria-hidden="true" class="fa-solid fa-arrow-right"></i
+        ></a>
+    </div>
+    <div class="img-container">
+        <img src="{{factoryProccessAbout.image1.path}}" alt="{{'site.about_factory_proccess' | _}}" />
+    </div>
+</div>

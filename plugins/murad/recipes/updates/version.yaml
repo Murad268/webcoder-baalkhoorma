@@ -1,0 +1,11 @@
+v1.0.1:
+    - 'Initialize plugin'
+v1.0.2:
+    - 'Created table murad_recipes_'
+    - builder_table_create_murad_recipes_.php
+v1.0.3:
+    - 'Updated table murad_recipes_'
+    - builder_table_update_murad_recipes_.php
+v1.0.4:
+    - 'Updated table murad_recipes_'
+    - builder_table_update_murad_recipes__2.php

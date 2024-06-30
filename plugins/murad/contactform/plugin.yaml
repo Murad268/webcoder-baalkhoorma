@@ -1,0 +1,11 @@
+plugin:
+    name: 'murad.contactform::lang.plugin.name'
+    description: 'murad.contactform::lang.plugin.description'
+    author: murad
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: 'Форма обратной связи'
+        url: murad/contactform/contactform
+        icon: icon-envelope

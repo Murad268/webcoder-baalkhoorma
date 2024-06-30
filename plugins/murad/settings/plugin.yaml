@@ -1,0 +1,11 @@
+plugin:
+    name: 'murad.settings::lang.plugin.name'
+    description: 'murad.settings::lang.plugin.description'
+    author: murad
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Настройки
+        url: murad/settings/settngs/update/1
+        icon: icon-cogs

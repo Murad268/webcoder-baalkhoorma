@@ -1,0 +1,10 @@
+name: Settngs
+form: $/murad/settings/models/settings/fields.yaml
+modelClass: Murad\Settings\Models\Settings
+defaultRedirect: murad/settings/settngs
+create:
+    redirect: 'murad/settings/settngs/update/:id'
+    redirectClose: murad/settings/settngs
+update:
+    redirect: murad/settings/settngs
+    redirectClose: murad/settings/settngs

@@ -1,0 +1,12 @@
+{% if datas.count > 0%}
+<div class="factory-process_process-container">
+    {% for data in datas %}
+    <div class="process">
+        <div class="img-container">
+            <img src="{{data.image.path}}" alt="{{data.title}}" />
+        </div>
+        <p>{{data.proccess_name}}</p>
+    </div>
+    {%endfor %}
+</div>
+{% endif %}

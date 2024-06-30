@@ -1,0 +1,13 @@
+columns:
+    id:
+        label: id
+        type: number
+    image:
+        title: название галереи
+        type: image
+    created_at:
+        label: дата создания
+        type: datetime
+    updated_at:
+        label: дата обновление
+        type: datetime

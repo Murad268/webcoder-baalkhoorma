@@ -1,0 +1,12 @@
+list: $/murad/productiongallary/models/productiongallary/columns.yaml
+modelClass: Murad\Productiongallary\Models\ProductionGallary
+title: ProductionGallary
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'murad/productiongallary/productiongallary/update/:id'

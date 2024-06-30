@@ -1,0 +1,34 @@
+fields:
+    title:
+        label: название блога
+        span: auto
+        placeholder: 'введите название'
+        type: text
+    image:
+        label: изображение блога
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    desc:
+        label: описание товара
+        size: large
+        span: auto
+        type: richeditor
+        placeholder: 'введите описание товара'
+
+    slug:
+        label: слаг
+        span: auto
+        placeholder: 'введите слаг товара'
+        preset:
+            field: title
+            type: slug
+        type: text
+    is_active:
+        label: 'активный блог'
+        span: auto
+        type: switch

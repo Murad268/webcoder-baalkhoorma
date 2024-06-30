@@ -1,0 +1,31 @@
+fields:
+    text1:
+        label: 'первый текст'
+        size: large
+        span: auto
+        placeholder: 'введите первый текст'
+        type: richeditor
+    text2:
+        label: 'второй текст'
+        size: large
+        span: auto
+        placeholder: 'введите второй текст'
+        type: richeditor
+    image1:
+        label: 'первое изображение'
+        mode: image
+        useCaption: 0
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    image2:
+        label: 'второе изображение'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload

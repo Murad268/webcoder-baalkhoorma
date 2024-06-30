@@ -1,0 +1,70 @@
+<section class="result">
+    <div class="container">
+        <div class="top">
+            <div class="breadcrumb">
+                <ul>
+                    <li>
+                        <a href="{{'home' | page}}">{{'site.home'|_}}</a>
+                    </li>
+                    <li>
+                        <a>{{'site.search_results'|_}}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="result-categories">
+                <p>{{'site.search_results_for'|_}}: <span>{{q}}</span></p>
+                <div class="checkbox-container">
+                    <div>
+                        <a href="{{ 'search_results'|page({ q: q }) }}"
+                            >{{'site.all'|_}}</a
+                        >
+                    </div>
+                    <div>
+                        <a href="{{ 'search_results_for_news'|page({ n: q }) }}"
+                            >{{'site.news'|_}}</a
+                        >
+                    </div>
+                    <div class="active">
+                        <a
+                            href="{{ 'search_results_for_recipes'|page({ r: q }) }}"
+                            >{{'site.recipes'|_}}</a
+                        >
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        {% if datas.count > 0 %}
+        <div class="result-container">
+            {% for data in datas %}
+            <div class="card-container">
+                <div class="img-container">
+                    <img src="{{data.image.path}}" alt="" />
+                </div>
+                <div class="info-container">
+                    <p class="date">{{data.created_at |date('d.m.y')}}</p>
+                    <p class="subtitle sm">{{data.title}}</p>
+                    <a
+                        class="redirect"
+                        href="{{ 'recipe_inner'|page({ slug: data.slug}) }}"
+                        >{{'site.read_more'|_}}
+                        <i class="fa-solid fa-arrow-right"></i
+                    ></a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+           {% if hasButton %}
+           <div class="actions">
+            <button
+                data-page="{{page}}"
+                class="btn outlined load-more-s-recipes"
+            >
+                {{'site.load_more'|_}}
+            </button>
+        </div>
+        {% endif %}
+
+        {% else %} data is not found {% endif %}
+    </div>
+</section>

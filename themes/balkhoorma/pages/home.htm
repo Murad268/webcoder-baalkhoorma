@@ -1,0 +1,78 @@
+url = "/"
+layout = "default_layout"
+title = "home"
+styles = "assets/css/index.css"
+
+[feedback]
+
+[certificates_and_diplomas]
+
+[viewBag]
+localeTitle[az] = "ana səhifə"
+localeTitle[ru] = "главная"
+
+[proccess]
+
+[home_page_about_text]
+
+[home_page_slider]
+
+[categories]
+
+[AVAILABLEATTHESERETAILERS]
+
+[home_page_factory_proccess_about]
+
+[homepage_recipes]
+
+[map]
+==
+<section class="hero-section">
+{% component 'home_page_about_text' %} 
+        <div  class="container">
+          
+            <div  class="hero-section__top">
+                <h1>{{'site.welcome-to-balkhoorma'|_}}</h1>
+                <a href="{{'products' | page}}" class="btn outlined">
+                    {{'site.discover'|_}}
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+       
+        {% component 'home_page_slider' %}
+    </section>
+   {% component 'categories' %} 
+
+    <section class="factory-process">
+        <div class="container">
+            <h3>{{ 'site.factory_proccess'|_ }}</h3>
+
+            {% component 'proccess' %} {% component
+            'home_page_factory_proccess_about' %}
+        </div>
+    </section>
+
+    <section class="recipes">
+        <div class="container">
+            <div class="top">
+                <h3>{{ 'site.recipes_title'|_ }}</h3>
+                <p>{{ 'site.recipes_subtitle'|_ }}</p>
+
+                <a class="redirect" href="{{'recipes' | page({'sort' : 'newest'})}}"
+                    >{{ 'site.view_all'|_ }}
+                    <i class="fa-solid fa-arrow-right"></i
+                ></a>
+            </div>
+
+            {% component 'homepage_recipes' %}
+        </div>
+    </section>
+
+    {% component 'certificates_and_diplomas' %}
+
+  
+    {% component 'map' %}
+    {%
+    component 'AVAILABLEATTHESERETAILERS' %}
+    {% component 'feedback' %}

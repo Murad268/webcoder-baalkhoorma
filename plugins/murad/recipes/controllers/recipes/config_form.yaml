@@ -1,0 +1,10 @@
+name: RECIPES
+form: $/murad/recipes/models/recipes/fields.yaml
+modelClass: Murad\Recipes\Models\RECIPES
+defaultRedirect: murad/recipes/recipes
+create:
+    redirect: 'murad/recipes/recipes/update/:id'
+    redirectClose: murad/recipes/recipes
+update:
+    redirect: murad/recipes/recipes
+    redirectClose: murad/recipes/recipes

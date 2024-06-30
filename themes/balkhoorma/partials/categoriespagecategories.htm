@@ -1,0 +1,27 @@
+{% for prod in selectedProducts %}
+  <a style="display: grid;position: relative;" title="{{prod.title}}" aria-label="{{prod.title}}" class="product-card" data-filter="{{prod.category_id}}" href="{{ 'product_detail'|page({ slug: prod.slug}) }}">
+                       
+                <div class="img-container">
+                    <img src="{{prod.images.first.path}}" alt="{{prod.title}}" />
+                </div>
+                <div class="info-container">
+                    <p class="product-name subtitle">{{prod.title}}</p>
+                    <p class="product-description">{{prod.short_desc}}</p>
+                    <span
+                        
+                        style=" 
+                                position: absolute;
+                                bottom: 0;
+                                left: 55%;
+                                transform: translateX(-50%);
+                                "
+
+                        class="redirect"
+                        >{{'site.read_more'|_}}
+                        <i aria-hidden="true" class="fa-solid fa-arrow-right"></i
+                    ></span>
+                </div>
+           
+            </a>
+
+{% endfor %}

@@ -1,0 +1,7 @@
+{% for image in data %}
+<div class="img-container">
+    <a onclick="event.preventDefault()" href="{{image.image.path}}">
+        <img src="{{image.image.path}}" alt="" />
+    </a>
+</div>
+{% endfor %}

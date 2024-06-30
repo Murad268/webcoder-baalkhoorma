@@ -1,0 +1,10 @@
+name: News
+form: $/murad/news/models/news/fields.yaml
+modelClass: Murad\News\Models\News
+defaultRedirect: murad/news/news
+create:
+    redirect: 'murad/news/news/update/:id'
+    redirectClose: murad/news/news
+update:
+    redirect: murad/news/news
+    redirectClose: murad/news/news

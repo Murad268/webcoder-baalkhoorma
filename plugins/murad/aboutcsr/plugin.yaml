@@ -1,0 +1,7 @@
+plugin:
+    name: 'murad.aboutcsr::lang.plugin.name'
+    description: 'murad.aboutcsr::lang.plugin.description'
+    author: murad
+    icon: oc-icon-adjust
+    homepage: ''
+

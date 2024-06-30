@@ -1,0 +1,46 @@
+url = "/product_category/:slug"
+layout = "default_layout"
+title = "product category"
+styles = "assets/css/products.css"
+breadcrumb = "product category"
+
+[categories_top]
+
+[builderDetails]
+modelClass = "Murad\Categories\Models\Categories"
+identifierValue = "{{ :slug }}"
+modelKeyColumn = "slug"
+displayColumn = "title"
+notFoundMessage = "Record not found"
+
+[sub_categories]
+
+[viewBag]
+localeTitle[az] = "məhsul kateqoriyaları"
+localeTitle[ru] = "Категории продукта"
+==
+<!-- <section class="banner">
+<div class="top" style="--bg-img: url(../imgs/about-bg.jpg)">
+    <div class="container">
+    <h2>Products</h2>
+    </div>
+</div>
+</section> -->
+
+<div class="container">
+    <div class="breadcrumb">
+        <ul>
+            <li><a href="{{'home'|page}}">{{'site.home'|_}}</a></li>
+            <li>
+                <a href="{{ 'products' | page }}">{{'site.all'|_}}</a>
+            </li>
+            <li>
+                <a>{{slug}}</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+{% component 'categories_top' %} {% component 'sub_categories' %}

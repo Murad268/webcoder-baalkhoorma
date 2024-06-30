@@ -1,0 +1,7 @@
+plugin:
+    name: 'murad.termsofuse::lang.plugin.name'
+    description: 'murad.termsofuse::lang.plugin.description'
+    author: murad
+    icon: oc-icon-adjust
+    homepage: ''
+

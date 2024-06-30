@@ -1,0 +1,7 @@
+plugin:
+    name: 'murad.recipes::lang.plugin.name'
+    description: 'murad.recipes::lang.plugin.description'
+    author: murad
+    icon: oc-icon-adjust
+    homepage: ''
+

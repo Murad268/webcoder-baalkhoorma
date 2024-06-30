@@ -1,0 +1,12 @@
+list: $/murad/recipes/models/recipes/columns.yaml
+modelClass: Murad\Recipes\Models\RECIPES
+title: RECIPES
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'murad/recipes/recipes/update/:id'

@@ -1,0 +1,10 @@
+name: TermsOfUse
+form: $/murad/termsofuse/models/termsofuse/fields.yaml
+modelClass: Murad\Termsofuse\Models\TermsOfUse
+defaultRedirect: murad/termsofuse/termsofuse
+create:
+    redirect: 'murad/termsofuse/termsofuse/update/:id'
+    redirectClose: murad/termsofuse/termsofuse
+update:
+    redirect: murad/termsofuse/termsofuse
+    redirectClose: murad/termsofuse/termsofuse

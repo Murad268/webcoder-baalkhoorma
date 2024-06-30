@@ -1,0 +1,19 @@
+{% for product in mainProducts %}
+  <a title="{{product.title}}" aria-label="{{product.title}}" class="product-card" href="{{ 'product_detail'|page({ slug: product.slug}) }}">
+                       
+                <div class="img-container">
+                    <img src="{{product.images.first.path}}" alt="{{product.title}}" />
+                </div>
+                <div class="info-container">
+                    <p class="product-name subtitle">{{product.title}}</p>
+                    <p class="product-description">{{product.short_desc}}</p>
+                    <span
+                        
+                        class="redirect"
+                        >{{'site.read_more'|_}}
+                        <i aria-hidden="true" class="fa-solid fa-arrow-right"></i
+                    ></span>
+                </div>
+           
+            </a>
+{% endfor %}

@@ -1,0 +1,31 @@
+body {
+    background-color: var(--clr-white);
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: grid;
+    place-items: center;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 10rem;
+    row-gap: 3rem;
+    align-items: center;
+    text-align: center;
+}
+
+.container>* {
+    flex: 1;
+    flex-basis: 20rem;
+}
+
+.container>.text-container {
+    color: var(--clr-orange);
+}
+
+.container>.text-container>a {
+    width: max-content;
+    margin-block: 4.5rem;
+    margin-inline: auto;
+}

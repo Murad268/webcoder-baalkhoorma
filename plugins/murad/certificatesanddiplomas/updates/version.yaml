@@ -1,0 +1,14 @@
+v1.0.1:
+    - 'Initialize plugin'
+v1.0.2:
+    - 'Created table murad_certificatesanddiplomas_'
+    - builder_table_create_murad_certificatesanddiplomas_.php
+v1.0.3:
+    - 'Updated table murad_certificatesanddiplomas_'
+    - builder_table_update_murad_certificatesanddiplomas_.php
+v1.0.4:
+    - 'Updated table murad_certificatesanddiplomas_'
+    - builder_table_update_murad_certificatesanddiplomas__2.php
+v1.0.5:
+    - 'Updated table murad_certificatesanddiplomas_'
+    - builder_table_update_murad_certificatesanddiplomas__3.php

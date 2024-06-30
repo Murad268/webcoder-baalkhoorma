@@ -1,0 +1,22 @@
+fields:
+    name:
+        label: имя
+        span: auto
+        type: text
+    surname:
+        label: фамилия
+        span: auto
+        type: text
+    phone:
+        label: телефон
+        span: auto
+        type: text
+    email:
+        label: почта
+        span: auto
+        type: text
+    message:
+        label: сообщение
+        size: ''
+        span: auto
+        type: textarea

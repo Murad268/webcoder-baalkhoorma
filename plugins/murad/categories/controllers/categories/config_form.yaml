@@ -1,0 +1,10 @@
+name: Categories
+form: $/murad/categories/models/categories/fields.yaml
+modelClass: Murad\Categories\Models\Categories
+defaultRedirect: murad/categories/categories
+create:
+    redirect: 'murad/categories/categories/update/:id'
+    redirectClose: murad/categories/categories
+update:
+    redirect: murad/categories/categories
+    redirectClose: murad/categories/categories

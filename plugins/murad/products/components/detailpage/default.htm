@@ -1,0 +1,136 @@
+<section class="product-detail">
+    <div class="container">
+        <div class="description">
+            <h3 class="product-name">{{mainProduct.title}}</h3>
+            <div class="text-container">
+                <p class="product-category">
+                    {{'site.category'|_}} :
+                    <span>{{mainProduct.category.title}}</span>
+                </p>
+                <p class="product-description">{{mainProduct.details | raw}}</p>
+            </div>
+            <div class="slider-container">
+                <div class="swiper main-slider">
+                    <div class="swiper-wrapper">
+                        {% for image in mainProduct.images %}
+                        <div class="swiper-slide">
+                            <img src="{{image.path}}" />
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div thumbsSlider="" class="swiper thumbs-slider">
+                    <div class="swiper-wrapper">
+                        {% for image in mainProduct.images %}
+                        <div class="swiper-slide">
+                            <img src="{{image.path}}" />
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section style="margin-bottom: 60px" class="tabmenu">
+    <div class="container">
+        <div class="tabmenu-container">
+            <ul>
+                <li class="subtitle sm active" data-related="description">
+                    <a>{{'site.description'|_}}</a>
+                </li>
+                 {% if mainProduct.spesifications != null %}
+                    <li class="subtitle sm" data-related="specifications">
+                    <a>{{'site.specifications'|_}}</a>
+                </li>
+                 {% endif %}
+             
+                <li class="subtitle sm" data-related="benefits">
+                    <a>{{'site.benefits'|_}}</a>
+                </li>
+                <li class="subtitle sm" data-related="production">
+                    <a>{{'site.production'|_}}</a>
+                </li>
+                <li class="subtitle sm" data-related="order_proccess">
+                    <a>{{'site.order_proccess'|_}}</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="tabs">
+            <div data-page="description" class="description active">
+          
+                <p>{{mainProduct.desc | raw}}</p>
+            </div>
+                {% if mainProduct.spesifications != null  %}
+                     <div data-page="specifications" class="specifications">
+
+                 <p>{{mainProduct.spesifications | raw }}</p>
+            </div>
+                {% endif %}
+       
+            <div data-page="benefits" class="benefits">
+              
+                <p>{{mainProduct.benefits | raw }}</p>
+            </div>
+            <div data-page="production" class="production">
+             
+                <p>{{mainProduct.production | raw }}</p>
+            </div>
+             <div data-page="order_proccess" class="production">
+              
+                <p>{{mainProduct.order_proccess | raw }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% if relatedProducts.count > 0%}
+<section class="related-products">
+    <div class="container">
+        <h3>{{'site.related_products'|_}}</h3>
+        <div class="related-products-slider-container">
+            <div class="swiper related-products-slider">
+                <div class="swiper-wrapper">
+                    {% for relatedProduct in relatedProducts %}
+                    <div class="swiper-slide">
+                        <a href="{{ 'product_detail'|page({ slug: relatedProduct.slug}) }}" class="product-card">
+                            <div class="img-container">
+                                <img
+                                    src="    {{relatedProduct.images.first.path}}"
+                                    alt=""
+                                />
+                            </div>
+                            <div class="info-container">
+                                <p class="product-name subtitle">
+                                    {{relatedProduct.title}}
+                                </p>
+                                <p class="product-description">
+                                    {{relatedProduct.short_desc}}
+                                </p>
+                                <span
+                                    
+                                    class="redirect"
+                                    >{{'site.read_more'|_}}
+                                    <i class="fa-solid fa-arrow-right"></i
+                                ></span>
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="actions">
+                    <div class="button-prev">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                    <div class="button-next">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}

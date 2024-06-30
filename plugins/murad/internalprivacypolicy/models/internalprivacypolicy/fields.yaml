@@ -1,0 +1,14 @@
+fields:
+    image:
+        label: 'Изоброжение диплома'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    title:
+        label: 'Заголовок для диплома'
+        span: auto
+        type: text

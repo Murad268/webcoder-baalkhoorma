@@ -1,0 +1,11 @@
+plugin:
+    name: 'murad.translates::lang.plugin.name'
+    description: 'murad.translates::lang.plugin.description'
+    author: murad
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Переводы
+        url: rainlab/translate/messages
+        icon: icon-language

@@ -1,0 +1,10 @@
+name: AboutHistory
+form: $/murad/abouthistory/models/abouthistory/fields.yaml
+modelClass: Murad\Abouthistory\Models\AboutHistory
+defaultRedirect: murad/abouthistory/abouthistory
+create:
+    redirect: 'murad/abouthistory/abouthistory/update/:id'
+    redirectClose: murad/abouthistory/abouthistory
+update:
+    redirect: murad/abouthistory/abouthistory
+    redirectClose: murad/abouthistory/abouthistory

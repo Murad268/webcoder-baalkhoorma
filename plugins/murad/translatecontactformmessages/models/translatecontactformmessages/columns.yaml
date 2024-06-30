@@ -1,0 +1,12 @@
+columns:
+    id:
+        label: id
+        type: number
+    success_message:
+        label: сообщение об успехе
+        type: text
+        searchable: true
+    success_title:
+        label: название успеха
+        type: text
+        searchable: true

@@ -1,0 +1,10 @@
+name: InternalPrivacyPolicyController
+form: $/murad/internalprivacypolicy/models/internalprivacypolicy/fields.yaml
+modelClass: Murad\Internalprivacypolicy\Models\InternalPrivacyPolicy
+defaultRedirect: murad/internalprivacypolicy/internalprivacypolicycontroller
+create:
+    redirect: 'murad/internalprivacypolicy/internalprivacypolicycontroller/update/:id'
+    redirectClose: murad/internalprivacypolicy/internalprivacypolicycontroller
+update:
+    redirect: murad/internalprivacypolicy/internalprivacypolicycontroller
+    redirectClose: murad/internalprivacypolicy/internalprivacypolicycontroller

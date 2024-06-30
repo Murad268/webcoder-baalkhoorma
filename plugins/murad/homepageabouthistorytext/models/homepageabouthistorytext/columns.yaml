@@ -1,0 +1,11 @@
+columns:
+    id:
+        label: id
+        type: number
+    map:
+        label: карта
+        type: image
+    text:
+        label: текст
+        type: text
+        searchable: true

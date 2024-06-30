@@ -1,0 +1,10 @@
+name: TranslateContactFormMessages
+form: $/murad/translatecontactformmessages/models/translatecontactformmessages/fields.yaml
+modelClass: Murad\Translatecontactformmessages\Models\TranslateContactFormMessages
+defaultRedirect: murad/translatecontactformmessages/translatecontactformmessages
+create:
+    redirect: 'murad/translatecontactformmessages/translatecontactformmessages/update/:id'
+    redirectClose: murad/translatecontactformmessages/translatecontactformmessages
+update:
+    redirect: murad/translatecontactformmessages/translatecontactformmessages
+    redirectClose: murad/translatecontactformmessages/translatecontactformmessages

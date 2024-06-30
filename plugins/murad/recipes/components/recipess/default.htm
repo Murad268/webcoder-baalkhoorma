@@ -1,0 +1,87 @@
+<div class="container">
+    <div class="breadcrumb">
+        <ul>
+            <li>
+                <a
+                    >{{'site.blog'|_}}</a
+                >
+            </li>
+             <li>
+                <a>{{'site.recipes'|_}}</a
+                >
+            </li>
+        </ul>
+    </div>
+</div>
+<section class="banner">
+    <div class="top" style="--bg-img: url(../imgs/about-bg.jpg)">
+        <div class="container">
+            <h2>{{'site.recipes_banner'|_}}</h2>
+        </div>
+    </div>
+
+    <div class="link-container">
+        <ul>
+            <li>
+                <a
+                    href="{{ 'blog'|page({ sort: 'a-z'}) }}"
+                    class="subtitle sm {{ this.page.link == 'news' ? 'active' : '' }}"
+                    >{{'menu.news'|_}}</a
+                >
+            </li>
+            <li>
+                <a
+                    href="{{ 'recipes'|page({ sort: 'a-z'}) }}"
+                    class="subtitle sm {{ this.page.link == 'recipes' ? 'active' : '' }}"
+                    >{{'menu.recipes'|_}}</a
+                >
+            </li>
+        </ul>
+    </div>
+</section>
+<section class="blog-card-container">
+    <div class="container">
+        <div class="filter-container">
+          <select class="select" name="sorting" id="sorting_recipes">
+    <option {% if sort == 'a-z' %}selected{% endif %} value="az" data-sort="a-z">A-Z</option>
+    <option {% if sort == 'z-a' %}selected{% endif %} value="za" data-sort="z-a">Z-A</option>
+    <option {% if sort == 'newest' %}selected{% endif %} value="newest" data-sort="newest">Newest</option>
+    <option {% if sort == 'oldest' %}selected{% endif %} value="oldest" data-sort="oldest">Oldest</option>
+</select>
+
+        </div>
+        <div class="card-grid">
+            {% for news in data %}
+            <a  href="{{ 'recipe_inner'|page({ slug: news.slug}) }}" class="card-container">
+                <div class="img-container">
+                    <img
+                        src="{{news.image ? news.image.getPath() : null | theme}}"
+                        alt=""
+                    />
+                </div>
+                <div class="info-container">
+                    <p class="date">{{news.created_at |date('d.m.y')}}</p>
+                    <p class="subtitle sm">{{news.title}}</p>
+
+                    <span class="redirect"
+                        >{{'site.read_more'|_}}
+                        <i class="fa-solid fa-arrow-right"></i
+                    ></span>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+
+        {% if hasButton %}
+             <div class="actions">
+            <button
+                class="btn outlined load-more-recipes"
+                data-page="{{ page }}"
+            >
+                {{'site.load_more'|_}}
+            </button>
+        </div>
+        {% endif %}
+
+    </div>
+</section>

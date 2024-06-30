@@ -1,0 +1,10 @@
+name: CertificatesAndDiplomas
+form: $/murad/certificatesanddiplomas/models/certificatesanddiplomas/fields.yaml
+modelClass: Murad\Certificatesanddiplomas\Models\CertificatesAndDiplomas
+defaultRedirect: murad/certificatesanddiplomas/certificatesanddiplomas
+create:
+    redirect: 'murad/certificatesanddiplomas/certificatesanddiplomas/update/:id'
+    redirectClose: murad/certificatesanddiplomas/certificatesanddiplomas
+update:
+    redirect: murad/certificatesanddiplomas/certificatesanddiplomas
+    redirectClose: murad/certificatesanddiplomas/certificatesanddiplomas

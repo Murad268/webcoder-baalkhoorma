@@ -1,0 +1,80 @@
+<div class="container">
+    <div class="breadcrumb">
+        <ul>
+            <li><a title="{{'site.about_history'|_}}" aria-label="{{'site.about_history'|_}}"
+                    href="{{'home'|page}}">{{'site.home'|_}}</a></li>
+            <li>
+                <a title="{{'site.about_history'|_}}" aria-label="{{'site.about_history'|_}}"
+                    href="{{'about_history'|page}}">{{'site.about_history'|_}}</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<section class="banner">
+    <div class="top" style="--bg-img: url(../imgs/about-bg.jpg)">
+        <div class="container">
+            <h2>{{'site.about_history_banner'|_}}</h2>
+        </div>
+    </div>
+
+    <div class="link-container">
+        <ul>
+            <li>
+                <a title="{{'site.about_history'|_}}" aria-label="{{'site.about_history'|_}}"
+                    href="{{ 'about_history'|page }}"
+                    class="subtitle sm {{ this.page.url == '/about-history' ? 'active' : '' }}">{{'menu.about_history'|_}}</a>
+            </li>
+            <li>
+                <a title="{{'menu.about_csr'|_}}" aria-label="{{'menu.about_csr'|_}}" href="{{ 'about_csr'|page }}"
+                    class="subtitle sm {{ this.page.url == '/about-csr' ? 'active' : '' }}">{{'menu.about_csr'|_}}</a>
+            </li>
+        </ul>
+    </div>
+</section>
+<section class="history">
+    <div class="container">
+        <h3>{{'site.about_history_subtitle'|_}}</h3>
+        <div class="history-container">
+            <div class="text-container">
+                <p>{{data.text1 | raw}}</p>
+            </div>
+
+            <div class="media-container" data-video="{{data.video_link}}">
+                <iframe style="width:100%; height: 350px"
+                    src="https://www.youtube.com/embed/{{data.video_link}}?autoplay=1&mute=1" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+        <div class="history-container">
+            <div class="text-container">
+                <p>{{data.text2 | raw}}</p>
+            </div>
+            <div class="media-container">
+                <img
+                    src="{{data.image ? data.image.getPath() : null | theme}}"
+                    alt="{{'menu.about_csr'|_}}"
+                />
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--<dialog class="video-modal">-->
+<!--    <button class="close-btn">-->
+<!--        <i class="fa-solid fa-x"></i>-->
+<!--    </button>-->
+
+<!--    <div class="video-container">-->
+<!--        <iframe-->
+<!--            src=""-->
+<!--            title="YouTube video player"-->
+<!--            frameborder="0"-->
+<!--            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"-->
+<!--            allowfullscreen-->
+<!--        ></iframe>-->
+<!--    </div>-->
+<!--</dialog>-->

@@ -1,0 +1,10 @@
+name: ProductsTop
+form: $/murad/productstop/models/productstop/fields.yaml
+modelClass: Murad\Productstop\Models\ProductsTop
+defaultRedirect: murad/productstop/productstop
+create:
+    redirect: 'murad/productstop/productstop/update/:id'
+    redirectClose: murad/productstop/productstop
+update:
+    redirect: murad/productstop/productstop
+    redirectClose: murad/productstop/productstop

@@ -1,0 +1,239 @@
+.detail-container {
+  margin-block: 6rem 12rem;
+}
+
+.detail-container > .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12rem;
+}
+
+.detail-container > .container > * {
+  flex-basis: 35rem;
+}
+
+/* Left side */
+
+.detail-container > .container > .left-side {
+  flex: 5;
+  text-transform: uppercase;
+}
+
+.detail-container > .container > .left-side > .publish-date {
+  margin-block: 13rem 4rem;
+}
+
+.detail-container > .container > .left-side > * > :first-child {
+  color: var(--clr-black-8);
+}
+
+.detail-container > .container > .left-side > * > :nth-child(n + 2) {
+  margin-top: 1.5rem;
+  color: var(--clr-orange);
+}
+
+.detail-container > .container > .left-side > * > .icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.detail-container > .container > .left-side > * > .icons > a {
+  width: 2.6rem;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border: 1px solid;
+  border-radius: 50%;
+}
+
+/* Middle */
+
+.detail-container > .container > article {
+  flex: 21;
+  color: var(--clr-black-6);
+}
+
+.detail-container > .container > article > h3 {
+  color: var(--clr-green);
+}
+
+.detail-container > .container > article > .img-container {
+  margin-block: 4.5rem 3rem;
+}
+
+/* slide */
+
+.main_slider {
+       position: relative;
+   }
+
+   .main_slider > button {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       border: 0;
+       position: absolute;
+       top: 50%;
+       font-size: 1.8rem;
+       background-color: rgb(250 159 66 / 70%);
+       color: var(--clr-white);
+       cursor: pointer;
+       border-radius: 50%;
+       width: 5rem;
+       height: 5rem;
+       z-index: 1;
+   }
+
+   .slider_img {
+       height: 400px;
+       position: relative;
+   }
+
+   .slider_img img {
+       position: absolute;
+       width: 100%;
+       height: 100%;
+       transition: transform 0.5s ease-in-out;
+   }
+
+   #prevBtn {
+       left: 0;
+       transform: translate(-5%,-50%);
+   }
+
+   #nextBtn {
+       right: 0;
+       transform: translate(5%, -50%);
+   }
+
+   .thumbnails {
+       display: flex;
+       column-gap: 1rem;
+       margin-top: 3rem;
+   }
+
+   .thumbnails > * {
+       flex: 1;
+       cursor: pointer;
+   }
+
+   .thumbnails img {
+       height: 100%;
+       object-fit: cover;
+   }
+
+   .thumbnail:hover, 
+   .thumbnail.active {
+       opacity: 0.6;
+   }
+
+   article > article {
+       margin-top: 2rem;
+   }
+
+/* Right side */
+
+.detail-container > .container > .related {
+  flex: 10;
+}
+
+.detail-container > .container > .related > h4 {
+  color: var(--clr-green);
+  margin-bottom: 4rem;
+}
+
+.detail-container > .container > .related > .related-card-container {
+  display: grid;
+  grid-auto-rows: 1fr;
+  gap: 3rem;
+}
+
+/* responsive */
+
+@media screen and (max-width: 1024px) {
+    .detail-container > .container {
+       gap: 8rem;
+    }
+
+    .thumbnails {
+       margin-top: 0;
+   }
+}
+
+@media screen and (max-width: 800px) {
+    .detail-container > .container {
+       flex-direction: column;
+       gap: 6rem;
+     }
+
+     .detail-container > .container > article {
+       order: 1;
+     }
+
+     .detail-container > .container > .left-side {
+       order: 2;
+     }
+
+     #prevBtn {
+       transform: translate(30%, -50%);
+     }
+
+     #nextBtn {
+       transform: translate(-30%, -50%);
+     }
+
+     .thumbnails {
+       margin-top: 2rem;
+     }
+
+     .detail-container > .container > .related {
+       order: 3;
+     }
+}
+
+@media screen and (max-width: 560px) {
+  .detail-container > .container > .left-side > .publish-date {
+    margin-block: 4rem;
+  }
+
+  .main_slider > button {
+       top: 100%;
+   }
+
+   #prevBtn, #nextBtn {
+       transform: unset;
+   }
+
+   .thumbnails {
+       margin-top: 6rem;
+   }
+}
+
+@media screen and (max-width: 480px) {
+  .detail-container > .container {
+    gap: 0;
+  }
+
+  .detail-container > .container > article > .img-container {
+    margin-block: 3rem;
+  }
+
+  .slider_img {
+       height: 360px;
+  }
+
+  .detail-container > .container > .left-side > .publish-date {
+    margin-block: 3rem;
+  }
+
+  .detail-container > .container > .left-side {
+    margin-block: 5rem 7rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+    .slider_img {
+       height: 260px;
+  }
+}

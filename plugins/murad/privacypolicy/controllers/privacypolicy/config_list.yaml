@@ -1,0 +1,12 @@
+list: $/murad/privacypolicy/models/privacypolicy/columns.yaml
+modelClass: Murad\Privacypolicy\Models\PrivacyPolicy
+title: PrivacyPolicy
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'murad/privacypolicy/privacypolicy/update/:id'

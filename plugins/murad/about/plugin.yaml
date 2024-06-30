@@ -1,0 +1,24 @@
+plugin:
+    name: 'murad.about::lang.plugin.name'
+    description: 'murad.about::lang.plugin.description'
+    author: murad
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: 'О нас'
+        url: /
+        icon: icon-edit
+        sideMenu:
+            side-menu-item:
+                label: 'О CSR'
+                url: murad/aboutcsr/aboutcsr/update/2
+                icon: icon-edit
+            side-menu-item2:
+                label: 'О нас'
+                url: murad/abouthistory/abouthistory/update/1
+                icon: icon-edit
+            side-menu-item4:
+                label: 'Текст о нас - на главной странице'
+                url: /murad/homepageabouthistorytext/homepageabouthistorytext/update/1
+                icon: icon-home

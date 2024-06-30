@@ -1,0 +1,6 @@
+plugin:
+    name: 'murad.internalprivacypolicy::lang.plugin.name'
+    description: 'murad.internalprivacypolicy::lang.plugin.description'
+    author: murad
+    icon: oc-icon-adjust
+    homepage: ''

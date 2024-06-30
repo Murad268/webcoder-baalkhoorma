@@ -1,0 +1,17 @@
+columns:
+    id:
+        label: id
+        type: number
+    image:
+        label: иконка
+        type: image
+    proccess_name:
+        label: назвение процесса
+        type: text
+        searchable: true
+    created_at:
+        label: дата добавление
+        type: datetime
+    updated_at:
+        label: дата обновление
+        type: datetime

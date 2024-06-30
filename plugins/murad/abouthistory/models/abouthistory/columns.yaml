@@ -1,0 +1,27 @@
+columns:
+    id:
+        label: id
+        type: number
+    image:
+        label: 'изображение'
+        type: image
+    video_image:
+        label: 'видеоизображение'
+        type: image
+    text1:
+        label: text1
+        type: text
+        searchable: true
+    text2:
+        label: text2
+        type: text
+        searchable: true
+    video_link:
+        label: ссылка для видео
+        type: text
+    created_at:
+        label: дата создание
+        type: datetime
+    updated_at:
+        label: дата обновление
+        type: datetime

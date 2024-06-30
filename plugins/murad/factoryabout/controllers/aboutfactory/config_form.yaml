@@ -1,0 +1,10 @@
+name: AboutFactory
+form: $/murad/factoryabout/models/factoryabout/fields.yaml
+modelClass: Murad\Factoryabout\Models\FactoryAbout
+defaultRedirect: murad/factoryabout/aboutfactory
+create:
+    redirect: 'murad/factoryabout/aboutfactory/update/:id'
+    redirectClose: murad/factoryabout/aboutfactory
+update:
+    redirect: murad/factoryabout/aboutfactory
+    redirectClose: murad/factoryabout/aboutfactory

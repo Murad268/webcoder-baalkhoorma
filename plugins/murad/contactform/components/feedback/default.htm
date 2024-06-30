@@ -1,0 +1,112 @@
+{% if this.page.url != '/' %}
+<div class="container">
+    <div class="breadcrumb">
+        <ul>
+            <li>
+                <a title="{{'site.home'|_}}" aria-label="{{'site.home'|_}}" href="{{'home'|page}}">{{'site.home'|_}}</a>
+            </li>
+            <li>
+                <a title="{{'site.contact'|_}}" aria-label="{{'site.contact'|_}}">{{'site.contact'|_}}</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<section class="banner">
+    <div class="top" style="--bg-img: url(../imgs/about-bg.jpg)">
+        <div class="container">
+            <h2>{{'site.contact_form_banner'|_}}</h2>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<section id="feedback" class="contact">
+    {% flash %}
+    <div class="alert alert-success">{{ message }}</div>
+    {% endflash %}
+    <div class="container">
+        {% if this.page.url != '/contact'%}
+        <h3>{{'site.contact'|_}}</h3>
+        {% endif %}
+        <div class="contact-container">
+            <form data-request="onFeedBack">
+                <input
+                    placeholder="{{'form.name'|_}}"
+                    class="input"
+                    type="text"
+                    name="name"
+                    aria-label="{{'form.name'|_}}"
+                />
+                <input
+                    placeholder="{{'form.surname'|_}}"
+                    class="input"
+                    type="text"
+                    name="surname"
+                    aria-label="{{'form.surname'|_}}"
+                />
+                <input
+                    placeholder="{{'form.phone'|_}}"
+                    class="input"
+                    type="text"
+                    name="phone"
+                    aria-label="{{'form.phone'|_}}"
+                />
+                <input
+                    placeholder="{{'form.email'|_}}"
+                    class="input"
+                    type="text"
+                    name="email"
+                    aria-label="{{'form.email'|_}}"
+                />
+                <textarea
+                    placeholder="{{'form.message'|_}}"
+                    class="input"
+                    name="message"
+                    aria-label="{{'form.message'|_}}"
+                ></textarea>
+                <div class="actions">
+                    <button    aria-label="{{'form.submit'|_}}" class="btn outlined">{{'form.submit'|_}}</button>
+                </div>
+            </form>
+            <div class="contact-info">
+                <ul>
+                    <li>
+                        <img
+                            src="{{'assets/icons/Letter-green.svg' | theme}}"
+                            alt="{{'form.email'|_}}"
+                        />
+                        <a title="{{settings.email}}" aria-label="{{settings.email}}" href="mailto:{{settings.email}}"
+                            >{{settings.email}}</a
+                        >
+                    </li>
+                    <li>
+                        <img
+                            src="{{'assets/icons/Phone Rounded-green.svg' | theme}}"
+                            alt="{{'form.phone'|_}}"
+                        />
+                        <a title="{{settings.phone1}}" aria-label="{{settings.phone1}}" href="tel:{{settings.phone1}}">{{settings.phone1}}</a> / <a title="{{settings.phone2}}" aria-label="{{settings.phone2}}" href="tel:{{settings.phone2}}">{{settings.phone2}} </a>
+                    </li>
+                    <li>
+                        <img
+                            src="{{'assets/icons/Map Point-green.svg' | theme}}"
+                            alt="{{settings.addres}}"
+                        />
+                        {{settings.addres}}
+                    </li>
+                </ul>
+            </div>
+            {% put modals %}
+            <div id="form_feed"></div>
+            <dialog class="message-popup">
+                <button aria-label="close" onclick="modalCloseHandler()" class="close-btn">
+                    <i aria-hidden="true" class="fa-solid fa-x"></i>
+                </button>
+                <div class="text-container">
+                    <h3 id="modal_thanks">Thank You</h3>
+                    <p id="modal_body">loading...</p>
+                </div>
+            </dialog>
+            {% endput %}
+        </div>
+    </div>
+</section>

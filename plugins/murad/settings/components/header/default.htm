@@ -1,0 +1,120 @@
+
+<header>
+    <div class="container">
+        <nav>
+            <div class="logo-container">
+                <a href="{{'home' | page}}">
+                    <img src="{{nav_logo.path}}" alt="{{'home' | page}}" />
+                </a>
+            </div>
+            <div class="link-container">
+                <ul>
+                    <li tabindex="0" class="has-child">
+                        <span>{{'menu.about'|_}}</span>
+                        <ul>
+                            <li class="back-btn">
+                                <button>
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </button>
+                            </li>
+                            <li><a title="{{'menu.about_history'|_}}" aria-lael="{{'menu.about_history'|_}}" href="{{ 'about_history' | page }}">{{'menu.about_history'|_}}</a></li>
+                            <li><a title="{{'menu.about_csr'|_}}" aria-label="{{'menu.about_csr'|_}}" href="{{ 'about_csr' | page }}">{{'menu.about_csr'|_}}</a></li>
+                        </ul>
+                    </li>
+                    <li tabindex="0" class="has-child">
+                        <span>{{'menu.production'|_}}</span>
+                        <ul>
+                            <li class="back-btn">
+                                <button>
+                                    <i aria-hidden="true" class="fa-solid fa-chevron-left"></i>
+                                </button>
+                            </li>
+                            <li><a title="{{'menu.factory_proccess'|_}}" aria-label="{{'menu.factory_proccess'|_}}" href="{{ 'productionfactoryprocess' | page }}">{{'menu.factory_proccess'|_}}</a></li>
+                            <li><a title="{{'menu.gallary'|_}}" aria-label="{{'menu.gallary'|_}}" href="{{ 'productiongallery' | page }}">{{'menu.gallary'|_}}</a></li>
+                        </ul>
+                    </li>
+                    <li tabindex="0" class="has-child">
+                        <span>{{'menu.products'|_}}</span>
+                        <ul>
+                            <li class="back-btn">
+                                <button>
+                                    <i aria-hidden="true" class="fa-solid fa-chevron-left"></i>
+                                </button>
+                            </li>
+                            <li><a title="{{'menu.all_products'|_}}" aria-label="{{'menu.all_products'|_}}" href="{{ 'products' | page }}">{{'menu.all_products'|_}}</a></li>
+                            {% for category in categories_for_header %}
+                                <li><a title="{{category.title}}" aria-label="{{category.title}}" href="{{ 'product_category'|page({ slug: category.slug, filter: "all" }) }}">{{category.title}}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                    <li tabindex="0" class="has-child">
+                        <span>{{'menu.blog'|_}}</span>
+                        <ul>
+                            <li class="back-btn">
+                                <button>
+                                    <i aria-hidden="true" class="fa-solid fa-chevron-left"></i>
+                                </button>
+                            </li>
+                            <li><a title="{{'menu.news'|_}}" aria-label="{{'menu.news'|_}}" href="{{ 'blog'|page({ sort: 'a-z'}) }}">{{'menu.news'|_}}</a></li>
+                            <li><a title="{{'menu.recipes'|_}}" aria-label="{{'menu.recipes'|_}}" href="{{ 'recipes'|page({ sort: 'a-z'}) }}">{{'menu.recipes'|_}}</a></li>
+                        </ul>
+                    </li>
+                    <li><a title="{{'menu.contact'|_}}" aria-label="{{'menu.contact'|_}}" href="{{ 'contact' | page }}">{{'menu.contact'|_}}</a></li>
+                </ul>
+                <div class="language-switch">
+                    <ul>
+                        {% for site in sitePicker.sites %}
+                        <li>
+                            <a title="{{ site.name }}" aria-label="{{ site.name }}" class="btn outlined" href="{{ site.url }}"
+                                >{{ site.name }}</a
+                            >
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="right-side">
+                <div class="language-switch">
+                    <select class="form-control" onchange="window.location.assign(this.value)">
+                        {% for site in sitePicker.sites %}
+                            <option value="{{ site.url }}" {{ this.site.code == site.code ? 'selected' : '' }}>{{ site.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="search-btn">
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+
+                <div class="hamburger-btn">
+                    <button aria-expended="true" class="open-btn">
+                        <i aria-hidden="true" class="fa-solid fa-bars"></i>
+                    </button>
+                    <button aria-expended="false" class="close-btn">
+                        <i aria-hidden="true" class="fa-solid fa-x"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="search-bar">
+        <div class="container">
+            <form action="{{'search_results' | page}}">
+                <label for="search" class="magnifier-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </label>
+                <input class="input" type="text" placeholder="{{'site.search_banner_placeholder'|_}}" name="q" id="search" />
+            </form>
+            <button class="close-btn">
+                <i class="fa-solid fa-x"></i>
+            </button>
+        </div>
+    </div>
+</header>
+
+<script>
+    document.querySelector('.search-bar form').setAttribute('action', document.querySelector('.search-bar form').getAttribute('action').replace('default', ''));
+</script>

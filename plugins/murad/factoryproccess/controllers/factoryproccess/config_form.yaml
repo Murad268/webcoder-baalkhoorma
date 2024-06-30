@@ -1,0 +1,10 @@
+name: FactoryProccess
+form: $/murad/factoryproccess/models/factoryproccess/fields.yaml
+modelClass: Murad\Factoryproccess\Models\FactoryProccess
+defaultRedirect: murad/factoryproccess/factoryproccess
+create:
+    redirect: 'murad/factoryproccess/factoryproccess/update/:id'
+    redirectClose: murad/factoryproccess/factoryproccess
+update:
+    redirect: murad/factoryproccess/factoryproccess
+    redirectClose: murad/factoryproccess/factoryproccess

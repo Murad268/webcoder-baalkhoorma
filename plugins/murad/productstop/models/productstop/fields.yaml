@@ -1,0 +1,21 @@
+fields:
+    title:
+        label: заголовок
+        span: auto
+        placeholder: 'başlığı daxil edin'
+        type: text
+    text:
+        label: текст
+        size: large
+        span: auto
+        placeholder: 'mətni daxil edin'
+        type: richeditor
+    image:
+        label: изоброжение
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload

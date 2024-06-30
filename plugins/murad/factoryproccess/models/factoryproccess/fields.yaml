@@ -1,0 +1,15 @@
+fields:
+    proccess_name:
+        label: 'назвение процесса'
+        span: auto
+        placeholder: 'введите назвение процесса'
+        type: text
+    image:
+        label: иконка
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload

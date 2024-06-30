@@ -1,0 +1,35 @@
+.blog-card-container {
+  margin-block: 4rem 12rem;
+}
+
+.blog-card-container > .container > .filter-container {
+  --width: 20rem;
+}
+
+.blog-card-container > .container > :is(.filter-container, .card-grid) {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(min(var(--width, 30rem), 100%), 1fr)
+  );
+  gap: 3rem;
+}
+
+.blog-card-container > .container > .card-grid {
+  margin-block: 4rem 6rem;
+}
+
+.blog-card-container > .container > .actions {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 480px) {
+  .blog-card-container {
+    margin-block: 3rem 9rem;
+  }
+
+  .blog-card-container > .container > .card-grid {
+    margin-block: 3rem 5rem;
+  }
+}

@@ -1,0 +1,240 @@
+:is(.categories, .about, .products) :is(h1, h2, h3, h4) {
+  color: var(--clr-green);
+}
+
+/* About Section */
+
+.about {
+  background-color: var(--clr-white);
+}
+
+.about > .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 14rem;
+  row-gap: 3rem;
+  padding-block: 4.7rem 3.3rem;
+}
+
+.about > .container > * {
+  flex: 1;
+  flex-basis: 20rem;
+}
+
+.about > .container > .text-container > h3 {
+  margin-bottom: 4.9rem;
+}
+
+.about > .container > .text-container > p {
+  color: var(--clr-black-6);
+}
+
+/* Categories Section */
+
+.categories {
+  padding-top: 20rem;
+  margin-bottom: 14rem;
+}
+
+.categories > .container > .categories-slider-container {
+  margin-block-start: 5rem;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(33rem, 100%), 1fr));
+  grid-auto-rows: 19.5rem;
+  gap: 3rem;
+}
+
+.categories
+  > .container
+  > .categories-slider-container
+  > a:has(.main-category) {
+  grid-row: span 2;
+}
+
+.categories > .container > .top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.categories > .container > .top > p {
+  max-width: 52rem;
+  text-align: center;
+  margin-block: 4rem 3rem;
+  color: var(--clr-black-6);
+}
+
+.categories > .container > .top > a {
+  color: var(--clr-orange);
+
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: 0.9px;
+}
+
+/* Products section */
+
+.products {
+  padding-top: 20rem;
+  margin-block-end: 12rem;
+}
+
+.products > .container > .checkbox-container {
+  margin-block: 12rem 3rem;
+  width: max-content;
+  max-width: 100%;
+  margin-inline: auto;
+}
+
+.products > .container > h3 {
+  text-align: center;
+  margin-block-end: 6rem;
+}
+
+.products > .container > .products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 30rem), 1fr));
+    overflow: hidden;
+  gap: 3rem;
+}
+
+.products > .container > .products-container > .product-card {
+  display: grid;
+  grid-template-rows: 25rem auto;
+  gap: 1.5rem;
+}
+
+.products
+  > .container
+  > .products-container
+  > .product-card
+  > .img-container
+  > img {
+  object-fit: contain;
+  width:100%;
+  height:100%;
+}
+
+.products > .container > .products-container > .product-card > .info-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.products
+  > .container
+  > .products-container
+  > .product-card
+  > .info-container
+  > .product-name {
+  color: var(--clr-green);
+  margin-bottom: 2rem;
+}
+  .spinner-container {
+      text-align: center;
+      margin: 50px;
+      display: none;
+    }
+
+    .spinner {
+      border: 4px solid rgba(0, 0, 0, 0.1);
+      border-top: 4px solid #3498db;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      display: inline-block;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+.products
+  > .container
+  > .products-container
+  > .product-card
+  > .info-container
+  > .product-description {
+  margin-block: auto 5rem;
+  color: var(--clr-black-6);
+}
+
+.products
+  > .container
+  > .products-container
+  > .product-card
+  > .info-container
+  > span {
+  margin-top: auto;
+  justify-content: center;
+  color: var(--clr-orange);
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.products > .container > .actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+.data-not-found {
+    display: none;
+    text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .categories > .container > .categories-slider-container > * {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .categories
+    > .container
+    > .categories-slider-container
+    > a:has(.main-category) {
+    grid-row: initial;
+  }
+
+  .categories > .container > .categories-slider-container {
+    grid-auto-columns: 100%;
+    margin-block-start: 3.5rem;
+    gap: 2rem;
+  }
+
+  .about > .container > .text-container > h3 {
+    margin-bottom: 3rem;
+  }
+
+  .categories {
+    padding-top: 6rem;
+    margin-bottom: 6rem;
+  }
+
+  .categories > .container > .top > p {
+    margin-block: 3rem;
+  }
+
+  .products > .container > h3 {
+    margin-block-end: 2rem;
+  }
+
+  .products
+    > .container
+    > .products-container
+    > .product-card
+    > .info-container
+    > .product-name {
+    font-size: 1.6rem;
+  }
+
+  .products {
+    margin-bottom: 9rem;
+  }
+
+  .products > .container > .checkbox-container {
+    margin-block: 6rem 3rem;
+  }
+}

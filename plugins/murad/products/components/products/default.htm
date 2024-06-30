@@ -1,0 +1,40 @@
+<section class="products">
+    <div class="container">
+        <h3>{{'site.products'|_}}</h3>
+        <div class="products-container">
+            {% for product in mainProducts %}
+            <a title="{{product.title}}" aria-label="{{product.title}}" class="product-card" href="{{ 'product_detail'|page({ slug: product.slug}) }}">
+                       
+                <div class="img-container">
+                    <img src="{{product.images.first.path}}" alt="{{product.title}}" />
+                </div>
+                <div class="info-container">
+                    <p class="product-name subtitle">{{product.title}}</p>
+                    <p class="product-description">{{product.short_desc}}</p>
+                    <span
+                      
+                        class="redirect"
+                        >{{'site.read_more'|_}}
+                        <i aria-hidden="true" class="fa-solid fa-arrow-right"></i
+                    ></span>
+                </div>
+           
+            </a>
+     
+            {% endfor %}
+        </div>
+
+        {% if hasButton %}
+            <div class="actions">
+            <button
+                aria-label="{{'site.load_more'|_}}"
+                data-page="{{page}}"
+                class="btn outlined load-more-products"
+            >
+                {{'site.load_more'|_}}
+            </button>
+        </div>
+        {% endif %}
+
+    </div>
+</section>

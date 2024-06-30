@@ -1,0 +1,24 @@
+{% if homePageRecipes.count > 0 %}
+<div class="card-slider-container">
+    <div class="swiper recipes-slider">
+        <div class="swiper-wrapper">
+            {% for recipe in homePageRecipes %}
+            <div class="swiper-slide">
+                <div class="card-container">
+                    <div class="img-container">
+                        <img src="{{recipe.image.path}}" alt="{{recipe.title}}" />
+                    </div>
+                    <div class="info-container">
+                        <p class="date">{{recipe.created_at |date('d.m.y')}}</p>
+                        <p class="subtitle sm">{{recipe.title}}</p>
+
+                        <a title="{{'site.read_more' | _}}" aria-label="{{'site.read_more' | _}}" class="redirect" href="{{ 'recipe_inner'|page({ slug: recipe.slug}) }}">{{'site.read_more' | _}}<i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
+                    </div> 
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+{% endif %}

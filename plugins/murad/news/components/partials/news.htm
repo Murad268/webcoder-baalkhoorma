@@ -1,0 +1,18 @@
+{% for news in data %}
+<a href="{{ 'blog_inner'|page({ slug: news.slug}) }}" class="card-container">
+    <div class="img-container">
+        <img
+            src="{{news.image ? news.image.getPath() : null | theme}}"
+            alt="{{news.title}}"
+        />
+    </div>
+    <div class="info-container">
+        <p class="date">{{news.created_at|date('d.m.y')}}</p>
+        <p class="subtitle sm">{{news.title}}</p>
+
+        <a title="{{'site.read_more'|_}}" aria-label="{{'site.read_more'|_}}" class="redirect" 
+            >{{'site.read_more'|_}} <i aria-hidden="true" class="fa-solid fa-arrow-right"></i
+        ></a>
+    </div>
+</a>
+{% endfor %}

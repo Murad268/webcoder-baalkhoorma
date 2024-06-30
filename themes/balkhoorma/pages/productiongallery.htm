@@ -1,0 +1,49 @@
+url = "/production-gallery"
+title = "production gallery"
+layout = "default_layout"
+styles = "assets/css/productionGallery.css"
+script = "assets/js/gallery.js"
+breadcrumb = "production gallery"
+[viewBag]
+localeTitle[az] = "istehsal qalereyası"
+localeTitle[ru] = "производственная галерея"
+[gallary]
+==
+<div class="container">
+    <div class="breadcrumb">
+        <ul>
+            <li><a href="{{'home'|page}}">{{'site.home'|_}}</a></li>
+            <li>
+                <a href="{{'about_history'|page}}">{{'site.gallery'|_}}</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<section class="banner">
+    <div class="top" style="--bg-img: url(../imgs/about-bg.jpg)">
+        <div class="container">
+            <h2>{{'site.production_gallery_banner'|_}}</h2>
+        </div>
+    </div>
+
+    <div class="link-container">
+        <ul>
+            <li>
+                <a
+                    href="{{ 'productiongallery'|page }}"
+                    class="subtitle sm {{ this.page.url == '/production-gallery' ? 'active' : '' }}"
+                    >{{'menu.gallary'|_}}</a
+                >
+            </li>
+            <li>
+                <a
+                    href="{{ 'productionfactoryprocess'|page }}"
+                    class="subtitle sm {{ this.page.url == '/production-factory-process' ? 'active' : '' }}"
+                    >{{'menu.factory_proccess'|_}}</a
+                >
+            </li>
+        </ul>
+    </div>
+</section>
+{% component 'gallary' %}

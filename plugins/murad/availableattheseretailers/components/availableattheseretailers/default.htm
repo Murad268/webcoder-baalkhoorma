@@ -1,0 +1,22 @@
+{% if avaliables.count > 0%}
+<section class="retailers">
+    <div class="container">
+        <h3>{{'site.availableattheseretailers'|_}}</h3>
+
+        <div class="slider-container">
+            <div class="swiper retailers-slider">
+                <div class="swiper-wrapper">
+                    {% for data in avaliables %}
+                    <div class="swiper-slide">
+                        <img src="{{ data.image.path }}" alt="{{ data.title }}" />
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+
